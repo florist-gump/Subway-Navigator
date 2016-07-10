@@ -34,6 +34,7 @@ class StopSelector: UIViewController {
         pickerView!.dataSource = self
         pickerView!.delegate = self
         pickerView!.selectionStyle = .None
+        pickerView!.scrollingStyle = .Infinite
         if let currentSelected = currentSelectedValue, indexOfCurrentSelectedValue = stopNames!.indexOf(currentSelected) {
             pickerView!.currentSelectedRow = indexOfCurrentSelectedValue
         }

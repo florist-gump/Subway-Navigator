@@ -15,7 +15,22 @@ class StopSelectionTableViewController: UITableViewController {
     @IBOutlet weak var destinationLabel:UILabel?
     
     @IBAction func startNavigation(x:UIButton) {
-        performSegueWithIdentifier("Navigate", sender: nil)
+        if pickedOrigin == nil || pickedDestination == nil {
+            let stopAlert = UIAlertController(title: "Stops not selected", message: "Please make sure you selected a origion and destination stop", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            stopAlert.addAction(UIAlertAction(title: "Okay", style: .Default, handler: { (action: UIAlertAction!) in
+                
+            }))
+            
+            presentViewController(stopAlert, animated: true, completion: nil)
+        } else {
+            performSegueWithIdentifier("Navigate", sender: nil)
+        }
+
+    }
+    
+    @IBAction func changeLine(x:UISegmentedControl) {
+        stopNames = stopNames!.reverse()
     }
     
     var pickedOrigin: String?
@@ -38,25 +53,39 @@ class StopSelectionTableViewController: UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let Nav = segue.destinationViewController as! UINavigationController
-        let stopSelector = Nav.topViewController as! StopSelector
-        stopSelector.stopNames = stopNames
-        
-        if segue.identifier == "SelectOriginStop" {
-            stopSelector.currentSelectedValue = pickedOrigin
-            stopSelector.updateSelectedValue = { (newSelectedValue) in
-                self.pickedOrigin = newSelectedValue
-                self.originLabel!.text = self.pickedOrigin
-                self.tableView.reloadData()
+        if segue.identifier == "SelectOriginStop" || segue.identifier == "SelectDestinationStop" {
+            let Nav = segue.destinationViewController as! UINavigationController
+            let stopSelector = Nav.topViewController as! StopSelector
+            stopSelector.stopNames = stopNames
+            
+            if segue.identifier == "SelectOriginStop" {
+                stopSelector.currentSelectedValue = pickedOrigin
+                stopSelector.updateSelectedValue = { (newSelectedValue) in
+                    self.pickedOrigin = newSelectedValue
+                    self.originLabel!.text = self.pickedOrigin
+                    self.tableView.reloadData()
+                }
+            }
+            if segue.identifier == "SelectDestinationStop" {
+                stopSelector.currentSelectedValue = pickedDestination
+                if pickedDestination == nil && pickedOrigin != nil {
+                    stopSelector.currentSelectedValue = pickedOrigin
+                }
+                stopSelector.updateSelectedValue = { (newSelectedValue) in
+                    self.pickedDestination = newSelectedValue
+                    self.destinationLabel!.text = self.pickedDestination
+                    self.tableView.reloadData()
+                }
             }
         }
-        if segue.identifier == "SelectDestinationStop" {
-            stopSelector.currentSelectedValue = pickedDestination
-            stopSelector.updateSelectedValue = { (newSelectedValue) in
-                self.pickedDestination = newSelectedValue
-                self.destinationLabel!.text = self.pickedDestination
-                self.tableView.reloadData()
-            }
+        if segue.identifier == "Navigate" {
+            let navController = segue.destinationViewController as! NavigationViewController
+            let origin = stopNames!.indexOf(pickedOrigin!)
+            let dest = stopNames!.indexOf(pickedDestination!)
+            let stopNameSelection = stopNames![origin!...dest!]
+            
+            navController.stops = Array(stopNameSelection)
+            navController.currentStop = navController.stops.count/2
         }
 
     }

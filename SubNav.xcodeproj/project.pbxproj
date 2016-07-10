@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C92E3691D31042C009CC4B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E3681D31042C009CC4B3 /* AppDelegate.swift */; };
-		5C92E36B1D31042C009CC4B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E36A1D31042C009CC4B3 /* ViewController.swift */; };
+		5C92E36B1D31042C009CC4B3 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E36A1D31042C009CC4B3 /* NavigationViewController.swift */; };
 		5C92E36E1D31042C009CC4B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C92E36C1D31042C009CC4B3 /* Main.storyboard */; };
 		5C92E3701D31042C009CC4B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C92E36F1D31042C009CC4B3 /* Assets.xcassets */; };
 		5C92E3731D31042C009CC4B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C92E3711D31042C009CC4B3 /* LaunchScreen.storyboard */; };
@@ -32,7 +32,7 @@
 		45444DBF9835DCBA46E69F36 /* Pods-SubNav.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubNav.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SubNav/Pods-SubNav.debug.xcconfig"; sourceTree = "<group>"; };
 		5C92E3651D31042C009CC4B3 /* SubNav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubNav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C92E3681D31042C009CC4B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5C92E36A1D31042C009CC4B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5C92E36A1D31042C009CC4B3 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		5C92E36D1D31042C009CC4B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C92E36F1D31042C009CC4B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C92E3721D31042C009CC4B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 				5C92E3A41D315E63009CC4B3 /* Resources */,
 				5C92E37A1D3107D0009CC4B3 /* TimeLineControl */,
 				5C92E3681D31042C009CC4B3 /* AppDelegate.swift */,
-				5C92E36A1D31042C009CC4B3 /* ViewController.swift */,
+				5C92E36A1D31042C009CC4B3 /* NavigationViewController.swift */,
 				5C92E36C1D31042C009CC4B3 /* Main.storyboard */,
 				5C92E3A71D324491009CC4B3 /* StopSelectionTableViewController.swift */,
 				5C92E3A91D32667C009CC4B3 /* StopSelector.swift */,
@@ -312,7 +312,7 @@
 				5C92E3971D3107D0009CC4B3 /* MASConstraintMaker.m in Sources */,
 				5C92E3AA1D32667C009CC4B3 /* StopSelector.swift in Sources */,
 				5C92E39C1D3107D0009CC4B3 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
-				5C92E36B1D31042C009CC4B3 /* ViewController.swift in Sources */,
+				5C92E36B1D31042C009CC4B3 /* NavigationViewController.swift in Sources */,
 				5C92E3951D3107D0009CC4B3 /* MASCompositeConstraint.m in Sources */,
 				5C92E39D1D3107D0009CC4B3 /* View+MASAdditions.m in Sources */,
 				5C92E39E1D3107D0009CC4B3 /* TimeLineViewControl.m in Sources */,

@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SubNav" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Navigate" id="BYZ-38-t0r" customClass="NavigationViewController" customModule="SubNav" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,21 +18,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jwe-sH-Zxi" customClass="TimeLineViewControl">
-                                <rect key="frame" x="-69" y="333" width="554" height="560"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nog-N7-hwV">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5sF-1e-aG4"/>
+                    <navigationItem key="navigationItem" id="5sF-1e-aG4">
+                        <barButtonItem key="rightBarButtonItem" title="Stop" id="O0z-2c-T63">
+                            <connections>
+                                <action selector="stop:" destination="BYZ-38-t0r" id="f2j-Yf-C7Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="timelineView" destination="jwe-sH-Zxi" id="lKc-vA-GvY"/>
+                        <outlet property="timelineView" destination="Nog-N7-hwV" id="jhh-Kd-U6c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1998" y="891"/>
+            <point key="canvasLocation" x="2008" y="891"/>
         </scene>
         <!--Stop Selector-->
         <scene sceneID="0AZ-cz-aC4">
@@ -113,7 +119,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="acb-M5-rvk">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="acb-M5-rvk">
                                                     <rect key="frame" x="15" y="54" width="570" height="29"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="28" id="KGB-cO-YHo"/>
@@ -122,6 +128,9 @@
                                                         <segment title="Inner"/>
                                                         <segment title="Outer"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="changeLine:" destination="9Kk-TF-NsB" eventType="valueChanged" id="ARN-o0-Gh2"/>
+                                                    </connections>
                                                 </segmentedControl>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Line" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7k-mH-bpL">
                                                     <rect key="frame" x="15" y="25" width="570" height="21"/>
@@ -239,7 +248,6 @@
                     <navigationItem key="navigationItem" id="Po9-Dd-koi"/>
                     <connections>
                         <outlet property="destinationLabel" destination="njF-VR-gUf" id="Joq-cw-ExT"/>
-                        <outlet property="line" destination="acb-M5-rvk" id="SSZ-NL-Xgj"/>
                         <outlet property="originLabel" destination="x2Z-Zk-28d" id="Duu-Hp-Y3E"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="Navigate" id="Z90-zj-KjS"/>
                         <segue destination="Lxh-CF-bKN" kind="show" identifier="SelectOriginStop" id="B4L-4Q-Pa9"/>
