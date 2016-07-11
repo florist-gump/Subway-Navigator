@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NavigationViewController: UIViewController {
+class NavigationViewController: UITableViewController {
     
     @IBOutlet weak var timelineView:UIView?
     
@@ -34,6 +34,7 @@ class NavigationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        title = "Navigate"
         self.navigationItem.hidesBackButton = true
         timeline = TimeLineViewControl(timeArray: nil, andTimeDescriptionArray: stops as [AnyObject], andCurrentStatus: Int32(currentStop), andFrame: timelineView!.frame)
         timelineView?.addSubview(timeline!)

@@ -89,7 +89,7 @@ const float VIEW_WIDTH = 225.0;
          self.progressDescriptionViewContainer.layer.borderWidth = 1;
          self.progressViewContainer.layer.borderColor = UIColor.greenColor.CGColor;
          self.progressViewContainer.layer.borderWidth = 1;
-         */
+        */
         [self addTimeDescriptionLabels:timeDescriptions andTime:time currentStatus:status];
         [self setNeedsUpdateConstraints];
         [self addProgressBasedOnLabels:self.labelDscriptionsArray currentStatus:status];
