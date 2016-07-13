@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreMotion
+import CoreLocation
 
 class NavigationViewController: UITableViewController {
     
@@ -24,12 +26,17 @@ class NavigationViewController: UITableViewController {
         }))
         
         presentViewController(stopAlert, animated: true, completion: nil)
+        locationManager.stopUpdatingLocation()
     }
     
     
     var stops:[String] = []
     var currentStop:Int = 1
     var timeline:TimeLineViewControl?
+    
+    var motionManager: CMMotionManager?
+    var locationManager:CLLocationManager!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +47,7 @@ class NavigationViewController: UITableViewController {
         timelineView?.addSubview(timeline!)
         
         notifyUser()
+        initLocationServices()
 
     }
     
@@ -63,7 +71,57 @@ class NavigationViewController: UITableViewController {
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
+    
+    func initLocationServices() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        switch CLLocationManager.authorizationStatus() {
+        case .AuthorizedAlways:
+            break
+        case .NotDetermined:
+            locationManager.requestAlwaysAuthorization()
+        case .AuthorizedWhenInUse, .Restricted, .Denied:
+            let alertController = UIAlertController(
+                title: "Background Location Access Disabled",
+                message: "In order to allow location updates in the background, please open app settings and set location access to 'Always'",
+                preferredStyle: .Alert)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            alertController.addAction(cancelAction)
+            
+            let openAction = UIAlertAction(title: "Open Settings", style: .Default) { (action) in
+                if let url = NSURL(string:UIApplicationOpenSettingsURLString) {
+                    UIApplication.sharedApplication().openURL(url)
+                }
+            }
+            alertController.addAction(openAction)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+        locationManager.allowsBackgroundLocationUpdates = true
+        
+        locationManager.startUpdatingLocation()
+        
+        if (motionManager == nil) {
+            motionManager = CMMotionManager()
+        }
+        
+        motionManager?.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: { (data: CMDeviceMotion?, error: NSError?) in
+            print("x:  \(data!.userAcceleration.x)")
+            print("y: \(data!.userAcceleration.y)")
+            print("z: \(data!.userAcceleration.z)")
+            
+        })
+    }
 
 
+}
+
+extension NavigationViewController: CLLocationManagerDelegate {
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("update")
+    }
 }
 
