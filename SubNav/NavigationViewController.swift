@@ -38,17 +38,30 @@ class NavigationViewController: UITableViewController {
         self.navigationItem.hidesBackButton = true
         timeline = TimeLineViewControl(timeArray: nil, andTimeDescriptionArray: stops as [AnyObject], andCurrentStatus: Int32(currentStop), andFrame: timelineView!.frame)
         timelineView?.addSubview(timeline!)
+        
+        notifyUser()
 
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        currentStop += 1
-        timeline?.updateCurrentStatus(Int32(currentStop))
+        //currentStop += 1
+        //timeline?.updateCurrentStatus(Int32(currentStop))
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func notifyUser() {
+        // create a corresponding local notification
+        let notification = UILocalNotification()
+        notification.alertBody = "Please get off at the next stop!"
+        notification.alertAction = "open"
+        notification.fireDate = NSDate(timeIntervalSinceNow: NSTimeInterval(10.0))
+        notification.soundName = UILocalNotificationDefaultSoundName
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
 
 
