@@ -204,8 +204,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyq-NZ-ZhL">
-                                                    <rect key="frame" x="8" y="8" width="584" height="37"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyq-NZ-ZhL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                                     <state key="normal" title="Start Navigation"/>
                                                     <connections>
                                                         <action selector="startNavigation:" destination="9Kk-TF-NsB" eventType="touchUpInside" id="bSy-L5-62k"/>
@@ -218,7 +218,10 @@
                                                 <constraint firstItem="Xyq-NZ-ZhL" firstAttribute="leading" secondItem="Y2N-CZ-ghj" secondAttribute="leadingMargin" id="ZMr-WB-aXU"/>
                                                 <constraint firstItem="Xyq-NZ-ZhL" firstAttribute="top" secondItem="Y2N-CZ-ghj" secondAttribute="topMargin" id="kvb-dl-4vV"/>
                                             </constraints>
+                                            <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
