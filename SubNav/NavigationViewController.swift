@@ -10,7 +10,7 @@ import UIKit
 import CoreMotion
 import CoreLocation
 
-class NavigationViewController: UITableViewController {
+class NavigationViewController: UIViewController {
     
     @IBOutlet weak var timelineView:UIView?
     
@@ -37,6 +37,7 @@ class NavigationViewController: UITableViewController {
     var motionManager: CMMotionManager?
     var locationManager:CLLocationManager!
 
+    var darkBlurView: UIVisualEffectView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,23 @@ class NavigationViewController: UITableViewController {
         
         notifyUser()
         initLocationServices()
+        
+        let darkBlur = UIBlurEffect(style: .Dark)
+        darkBlurView = UIVisualEffectView(effect: darkBlur)
+        darkBlurView.frame = self.view.bounds
+        
+        let label = UILabel()
+        label.text = "Please start navigation as soon as your on the train"
+        label.sizeToFit()
+        label.frame.origin = CGPoint(x: 12, y: 12)
+        
+        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
+        button.setTitle("Start", forState: .Normal)
+        button.addTarget(self, action:#selector(self.buttonClicked), forControlEvents: .TouchUpInside)
+
+        darkBlurView.contentView.addSubview(button)
+        let window = UIApplication.sharedApplication().keyWindow
+        window!.addSubview(darkBlurView)
 
     }
     
@@ -114,6 +132,10 @@ class NavigationViewController: UITableViewController {
             print("z: \(data!.userAcceleration.z)")
             
         })
+    }
+    
+    func buttonClicked() {
+        darkBlurView.removeFromSuperview()
     }
 
 
