@@ -30,7 +30,8 @@ class NavigationViewController: UIViewController {
     }
     
     
-    var stops:[String] = []
+    var stops:[String] = ["Kelvinhall", "Hillhead", "Kelvinbridge", "St. G cross", "Buchanen", "st. enoch"]
+    var times:[String] = ["5", "10", "15", "20", "25", "30"]
     var currentStop:Int = 1
     var timeline:TimeLineViewControl?
     
@@ -44,34 +45,17 @@ class NavigationViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         title = "Navigate"
         self.navigationItem.hidesBackButton = true
-        timeline = TimeLineViewControl(timeArray: nil, andTimeDescriptionArray: stops as [AnyObject], andCurrentStatus: Int32(currentStop), andFrame: timelineView!.frame)
+        timeline = TimeLineViewControl(timeArray: times, andTimeDescriptionArray: stops as [AnyObject], andCurrentStatus: Int32(currentStop), andFrame: timelineView!.frame)
         timelineView?.addSubview(timeline!)
         
-        notifyUser()
-        initLocationServices()
-        
-        let darkBlur = UIBlurEffect(style: .Dark)
-        darkBlurView = UIVisualEffectView(effect: darkBlur)
-        darkBlurView.frame = self.view.bounds
-        
-        let label = UILabel()
-        label.text = "Please start navigation as soon as your on the train"
-        label.sizeToFit()
-        label.frame.origin = CGPoint(x: 12, y: 12)
-        
-        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
-        button.setTitle("Start", forState: .Normal)
-        button.addTarget(self, action:#selector(self.buttonClicked), forControlEvents: .TouchUpInside)
-
-        darkBlurView.contentView.addSubview(button)
-        let window = UIApplication.sharedApplication().keyWindow
-        window!.addSubview(darkBlurView)
-
+        //notifyUser()
+        //initLocationServices()
+        //presentPauseScreen()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        //currentStop += 1
-        //timeline?.updateCurrentStatus(Int32(currentStop))
+        currentStop += 1
+        timeline?.updateCurrentStatus(Int32(currentStop))
     }
 
     override func didReceiveMemoryWarning() {
@@ -136,6 +120,26 @@ class NavigationViewController: UIViewController {
     
     func buttonClicked() {
         darkBlurView.removeFromSuperview()
+    }
+    
+    func presentPauseScreen() {
+        let darkBlur = UIBlurEffect(style: .Dark)
+        darkBlurView = UIVisualEffectView(effect: darkBlur)
+        darkBlurView.frame = self.view.bounds
+        
+        let label = UILabel()
+        label.text = "Please start navigation as soon as your on the train"
+        label.sizeToFit()
+        label.frame.origin = CGPoint(x: 12, y: 12)
+        
+        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
+        button.setTitle("Start", forState: .Normal)
+        button.addTarget(self, action:#selector(self.buttonClicked), forControlEvents: .TouchUpInside)
+        
+        darkBlurView.contentView.addSubview(button)
+        let window = UIApplication.sharedApplication().keyWindow
+        window!.addSubview(darkBlurView)
+
     }
 
 

@@ -79,7 +79,7 @@
                             <tableViewSection headerTitle="Line" footerTitle="" id="Inb-Ba-NZB">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="100" id="cuW-tb-FWK">
-                                        <rect key="frame" x="0.0" y="114" width="600" height="100"/>
+                                        <rect key="frame" x="0.0" y="50" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cuW-tb-FWK" id="huI-Px-N7l">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
@@ -123,7 +123,7 @@
                             <tableViewSection headerTitle="Select origin stop" id="dPO-vA-bhD">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="IA0-Wi-uoG">
-                                        <rect key="frame" x="0.0" y="265" width="600" height="60"/>
+                                        <rect key="frame" x="0.0" y="201" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IA0-Wi-uoG" id="t8a-mn-WmG">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
@@ -150,7 +150,7 @@
                             <tableViewSection headerTitle="Select Destination Stop" id="JIC-Na-JNC">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="edd-Nv-wMC">
-                                        <rect key="frame" x="0.0" y="376" width="600" height="60"/>
+                                        <rect key="frame" x="0.0" y="312" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="edd-Nv-wMC" id="5Dq-hp-HLb">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
@@ -177,7 +177,7 @@
                             <tableViewSection headerTitle="Navigate" id="qZt-Sd-83X">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="RYN-QE-xOg">
-                                        <rect key="frame" x="0.0" y="487" width="600" height="60"/>
+                                        <rect key="frame" x="0.0" y="423" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RYN-QE-xOg" id="Y2N-CZ-ghj">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
@@ -234,7 +234,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="9Kk-TF-NsB" kind="relationship" relationship="rootViewController" id="fCH-lW-ZFK"/>
+                        <segue destination="w89-YZ-XU6" kind="relationship" relationship="rootViewController" id="KxV-no-ckv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="foe-Jr-9LP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -254,8 +254,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2UB-Tp-9MK">
-                                <rect key="frame" x="0.0" y="264" width="580" height="336"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="20" y="164" width="560" height="436"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDw-DL-MZm">
                                 <rect key="frame" x="279" y="104" width="43" height="84"/>
@@ -271,12 +270,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="U6g-Ui-JQ0" firstAttribute="centerX" secondItem="3y6-lx-0Ax" secondAttribute="centerX" id="6Mg-Va-wY5"/>
-                            <constraint firstItem="2UB-Tp-9MK" firstAttribute="leading" secondItem="3y6-lx-0Ax" secondAttribute="leadingMargin" constant="-20" id="BPp-m4-p7K"/>
+                            <constraint firstItem="2UB-Tp-9MK" firstAttribute="leading" secondItem="3y6-lx-0Ax" secondAttribute="leadingMargin" id="BPp-m4-p7K"/>
                             <constraint firstItem="iFA-lK-xH2" firstAttribute="top" secondItem="2UB-Tp-9MK" secondAttribute="bottom" id="F1j-NX-LXm"/>
                             <constraint firstItem="rDw-DL-MZm" firstAttribute="centerX" secondItem="3y6-lx-0Ax" secondAttribute="centerX" id="IwL-I5-2Io"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2UB-Tp-9MK" secondAttribute="trailing" id="NeS-hX-DQJ"/>
                             <constraint firstItem="rDw-DL-MZm" firstAttribute="top" secondItem="50m-jC-Kkb" secondAttribute="bottom" constant="40" id="UDy-8q-SNo"/>
-                            <constraint firstItem="2UB-Tp-9MK" firstAttribute="top" secondItem="50m-jC-Kkb" secondAttribute="bottom" constant="200" id="qV5-14-k9o"/>
+                            <constraint firstItem="2UB-Tp-9MK" firstAttribute="top" secondItem="50m-jC-Kkb" secondAttribute="bottom" constant="100" id="qV5-14-k9o"/>
                             <constraint firstItem="U6g-Ui-JQ0" firstAttribute="top" secondItem="rDw-DL-MZm" secondAttribute="bottom" constant="20" id="tnJ-zU-GmO"/>
                         </constraints>
                     </view>
@@ -298,5 +297,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="U3k-iQ-ch1"/>
+        <segue reference="KxV-no-ckv"/>
     </inferredMetricsTieBreakers>
 </document>

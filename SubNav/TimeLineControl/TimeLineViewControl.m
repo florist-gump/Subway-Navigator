@@ -5,6 +5,7 @@
 //  Created by Roma on 8/25/14.
 //  Copyright (c) 2014 908 Inc. All rights reserved.
 //
+// modified by Florian Deuerlein
 
 #define MAS_SHORTHAND
 #define MAS_SHORTHAND_GLOBALS
@@ -39,6 +40,7 @@ const float VIEW_WIDTH = 225.0;
 @property(nonatomic, strong) UIView *progressDescriptionViewContainer;
 
 @property(nonatomic, strong) NSMutableArray *labelDscriptionsArray;
+@property(nonatomic, strong) NSMutableArray *labelTimesArray;
 @property(nonatomic, strong) NSMutableArray *sizes;
 @end
 
@@ -62,6 +64,13 @@ const float VIEW_WIDTH = 225.0;
     return _labelDscriptionsArray;
 }
 
+- (NSMutableArray *)labelTimesArray {
+    if (!_labelTimesArray) {
+        _labelTimesArray = [[NSMutableArray alloc] init];
+    }
+    return _labelTimesArray;
+}
+
 - (NSMutableArray *)sizes {
     if (!_sizes) {
         _sizes = [[NSMutableArray alloc] init];
@@ -72,7 +81,7 @@ const float VIEW_WIDTH = 225.0;
 - (id)initWithTimeArray:(NSArray *)time andTimeDescriptionArray:(NSArray *)timeDescriptions andCurrentStatus:(int)status andFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        viewheight = 75.0;
+        viewheight = frame.size.height;
         leftWidth = frame.size.width - (PROGRESS_VIEW_CONTAINER_LEFT + INITIAL_PROGRESS_CONTAINER_WIDTH + CIRCLE_RADIUS * 2);
         self.progressViewContainer = [[UIView alloc] init ];
         self.timeViewContainer = [[UIView alloc] init ];
@@ -113,8 +122,9 @@ const float VIEW_WIDTH = 225.0;
         label.textColor = i < currentStatus ? [UIColor blackColor] : [UIColor grayColor];
         label.textAlignment = NSTextAlignmentRight;
         label.lineBreakMode = NSLineBreakByWordWrapping;
-        [label setFont:[UIFont fontWithName:@"HelveticaNeue" size:12.0]];
+        [label setFont:[UIFont fontWithName:@"HelveticaNeue" size:14.0]];
         [self.timeViewContainer addSubview:label];
+        [self.labelTimesArray addObject:label];
         
         UILabel *descrLabel = self.labelDscriptionsArray[i];
         [label makeConstraints:^(MASConstraintMaker *make) {
@@ -153,7 +163,7 @@ const float VIEW_WIDTH = 225.0;
         label.textColor = i < currentStatus ? [UIColor blackColor] : [UIColor grayColor];
         label.textAlignment = NSTextAlignmentLeft;
         label.lineBreakMode = NSLineBreakByWordWrapping;
-        [label setFont:[UIFont fontWithName:@"HelveticaNeue" size:14.0]];
+        [label setFont:[UIFont fontWithName:@"HelveticaNeue" size:16.0]];
         [self.progressDescriptionViewContainer addSubview:label];
         [label makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(_progressDescriptionViewContainer).with.offset(7);
@@ -228,64 +238,41 @@ const float VIEW_WIDTH = 225.0;
         i++;
     }
     
-    [self startAnimatingLayers:circleLayers forStatus:currentStatus];
+    for (CAShapeLayer *cilrclLayer in circleLayers) {
+        [self.progressViewContainer.layer addSublayer:cilrclLayer];
+    }
+    for (CAShapeLayer *lineLayer in layers) {
+        [self.progressViewContainer.layer addSublayer:lineLayer];
+    }
 }
 
 - (void)updateCurrentStatus:(int)currentStatus {
-    NSLog(@"here");
-    //[self.layer removeAllAnimations];
-    [self startAnimatingLayers:circleLayers forStatus:currentStatus];
-    /*
     int i = 0;
-    CGFloat betweenLineOffset = 0;
-    CGFloat totlaHeight = 8;
-    CGPoint lastpoint;
-    CGFloat yCenter;
-    UIColor *strokeColor;
-    CGPoint toPoint;
-    CGPoint fromPoint;
-    layers = [[NSMutableArray alloc] init];
-    NSArray *labels = self.labelDscriptionsArray;
-
-    
-    
-    for (UILabel *label in labels) {
-        //configure circle
-        
-        CGSize fittingSize = [label systemLayoutSizeFittingSize: UILayoutFittingCompressedSize];
-        strokeColor = i < currentStatus ? [UIColor orangeColor] : [UIColor lightGrayColor];
-        yCenter = (totlaHeight);
-        
-        UIBezierPath *circle = [UIBezierPath bezierPath];
-        [self configureBezierCircle:circle withCenterY:yCenter];
-        CAShapeLayer *circleLayer = [self getLayerWithCircle:circle andStrokeColor:strokeColor];
-        [circleLayers addObject:circleLayer];
-        //add static background gray circle
-        CAShapeLayer *grayStaticCircleLayer = [self getLayerWithCircle:circle andStrokeColor:[UIColor lightGrayColor]];
-        [self.progressViewContainer.layer addSublayer:grayStaticCircleLayer];
-        //configure line
-        if (i > 0) {
-            fromPoint = lastpoint;
-            toPoint = CGPointMake(lastpoint.x, yCenter - CIRCLE_RADIUS);
-            lastpoint = CGPointMake(lastpoint.x, yCenter + CIRCLE_RADIUS);
-            
-            UIBezierPath *line = [self getLineWithStartPoint:fromPoint endPoint:toPoint];
-            CAShapeLayer *lineLayer = [self getLayerWithLine:line andStrokeColor:strokeColor];
-            [layers addObject:lineLayer];
-            //add static background gray line
-            CAShapeLayer *grayStaticLineLayer = [self getLayerWithLine:line andStrokeColor:[UIColor lightGrayColor]];
-            [self.progressViewContainer.layer addSublayer:grayStaticLineLayer];
-        } else {
-            lastpoint = CGPointMake(self.progressViewContainer.center.x + CIRCLE_RADIUS + INITIAL_PROGRESS_CONTAINER_WIDTH / 2, yCenter + CIRCLE_RADIUS);
-        }
-        
-        betweenLineOffset = BETTWEEN_LABEL_OFFSET;
-        totlaHeight += (fittingSize.height + betweenLineOffset);
+    for (UILabel *label in self.labelDscriptionsArray) {
+        label.textColor = i < currentStatus ? [UIColor blackColor] : [UIColor grayColor];
         i++;
     }
-    */
+    i = 0;
+    for (UILabel *label in self.labelTimesArray) {
+        label.textColor = i < currentStatus ? [UIColor blackColor] : [UIColor grayColor];
+        i++;
+    }
     
-    
+    [self setNeedsUpdateConstraints];
+    [self updateConstraintsIfNeeded];
+    i = 0;
+    for (CAShapeLayer *circleLayer in circleLayers) {
+        UIColor *strokeColor = i < currentStatus ? [UIColor orangeColor] : [UIColor lightGrayColor];
+        circleLayer.strokeColor = strokeColor.CGColor;
+        i++;
+    }
+    i = 1;
+    for (CAShapeLayer *lineLayer in layers) {
+        UIColor *strokeColor = i < currentStatus ? [UIColor orangeColor] : [UIColor lightGrayColor];
+        lineLayer.strokeColor = strokeColor.CGColor;
+        i++;
+    }
+
 }
 
 - (CAShapeLayer *)getLayerWithLine:(UIBezierPath *)line andStrokeColor:(UIColor *)strokeColor {
@@ -330,78 +317,6 @@ const float VIEW_WIDTH = 225.0;
                   startAngle:-M_PI_2
                     endAngle:M_PI_2
                    clockwise:YES];
-}
-
-- (void)startAnimatingLayers:(NSArray *)layersToAnimate forStatus:(int)currentStatus {
-    float circleTimeOffset = 1;
-    circleCounter = 0;
-    int i = 1;
-    //NSLog(@"CUR ST = %i layer to anim = %lu", currentStatus, (unsigned long)layersToAnimate.count);
-    if (currentStatus == layersToAnimate.count) {
-        //add without animation
-        for (CAShapeLayer *cilrclLayer in layersToAnimate) {
-            [self.progressViewContainer.layer addSublayer:cilrclLayer];
-        }
-        for (CAShapeLayer *lineLayer in layers) {
-            [self.progressViewContainer.layer addSublayer:lineLayer];
-        }
-    } else {
-        //add with animation
-        for (CAShapeLayer *cilrclLayer in layersToAnimate) {
-            [self.progressViewContainer.layer addSublayer:cilrclLayer];
-            
-            CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-            animation.duration = 0.2;
-            animation.beginTime = [cilrclLayer convertTime:CACurrentMediaTime() fromLayer:nil] + circleTimeOffset;
-            animation.fromValue = [NSNumber numberWithFloat:0.0f];
-            animation.toValue   = [NSNumber numberWithFloat:1.0f];
-            animation.fillMode = kCAFillModeForwards;
-            animation.delegate = self;
-            circleTimeOffset += .4;
-            [cilrclLayer setHidden:YES];
-            [cilrclLayer addAnimation:animation forKey:@"strokeCircleAnimation"];
-            if (i == currentStatus && i != [layersToAnimate count]) {
-                CABasicAnimation *strokeAnim = [CABasicAnimation animationWithKeyPath:@"strokeColor"];
-                strokeAnim.fromValue         = (id) [UIColor orangeColor].CGColor;
-                strokeAnim.toValue           = (id) [UIColor clearColor].CGColor;
-                strokeAnim.duration          = 1.0;
-                strokeAnim.repeatCount       = HUGE_VAL;
-                strokeAnim.autoreverses      = NO;
-                //[cilrclLayer addAnimation:strokeAnim forKey:@"animateStrokeColor"];
-            }
-            i++;
-        }
-    }
-    
-    
-}
-
-- (void)animationDidStart:(CAAnimation *)anim {
-    if (circleCounter < circleLayers.count) {
-        if (anim == [circleLayers[circleCounter] animationForKey:@"strokeCircleAnimation"]) {
-            [circleLayers[circleCounter] setHidden:NO];
-            circleCounter++;
-        }
-    }
-}
-
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
-    if (layerCounter >= layers.count) {
-        return;
-    }
-    CAShapeLayer *lineLayer = layers[layerCounter];
-    
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    animation.duration = 0.200;
-    
-    animation.fromValue = [NSNumber numberWithFloat:0.0f];
-    animation.toValue   = [NSNumber numberWithFloat:1.0f];
-    animation.fillMode = kCAFillModeForwards;
-    
-    [self.progressViewContainer.layer addSublayer:lineLayer];
-    [lineLayer addAnimation:animation forKey:@"strokeEndAnimation"];
-    layerCounter++;
-    
 }
 
 - (void)updateConstraints {
