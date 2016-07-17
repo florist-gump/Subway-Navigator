@@ -13,6 +13,8 @@ import CoreLocation
 class NavigationViewController: UIViewController {
     
     @IBOutlet weak var timelineView:UIView?
+    @IBOutlet weak var stopsLeft:UILabel?
+    
     
     @IBAction func stop(sender: UIBarButtonItem) {
         let stopAlert = UIAlertController(title: "Stop Navigating", message: "Are you sure you wan't to stop the navigation", preferredStyle: UIAlertControllerStyle.Alert)
@@ -30,9 +32,9 @@ class NavigationViewController: UIViewController {
     }
     
     
-    var stops:[String] = ["Kelvinhall", "Hillhead", "Kelvinbridge", "St. G cross", "Buchanen", "st. enoch"]
-    var times:[String] = ["5", "10", "15", "20", "25", "30"]
-    var currentStop:Int = 1
+    var stops:[Stop]!
+    
+    var currentStop:Int = 0
     var timeline:TimeLineViewControl?
     
     var motionManager: CMMotionManager?
@@ -45,17 +47,28 @@ class NavigationViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         title = "Navigate"
         self.navigationItem.hidesBackButton = true
-        timeline = TimeLineViewControl(timeArray: times, andTimeDescriptionArray: stops as [AnyObject], andCurrentStatus: Int32(currentStop), andFrame: timelineView!.frame)
+        var stopNames:[String] = [String]()
+        var stopTimes:[String] = [String]()
+        for stop in stops {
+            stopNames.append(stop.name)
+            stopTimes.append(NSString(format: "%.2f", stop.stopTime+stop.timeToNextStop) as String)
+        }
+        timeline = TimeLineViewControl(timeArray: stopTimes, andTimeDescriptionArray: stopNames as [AnyObject], andCurrentStatus: Int32(currentStop+1), andFrame: timelineView!.frame)
         timelineView?.addSubview(timeline!)
-        
-        //notifyUser()
-        //initLocationServices()
+        stopsLeft?.text = String(stops.count)
+        notifyUser()
+        initLocationServices()
         //presentPauseScreen()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         currentStop += 1
-        timeline?.updateCurrentStatus(Int32(currentStop))
+        updateWith(currentStop)
+    }
+    
+    func updateWith(status:Int) {
+        timeline?.updateCurrentStatus(Int32(currentStop+1))
+        stopsLeft?.text = String(stops.count - status)
     }
 
     override func didReceiveMemoryWarning() {

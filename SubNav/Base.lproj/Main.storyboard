@@ -79,7 +79,7 @@
                             <tableViewSection headerTitle="Line" footerTitle="" id="Inb-Ba-NZB">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="100" id="cuW-tb-FWK">
-                                        <rect key="frame" x="0.0" y="50" width="600" height="100"/>
+                                        <rect key="frame" x="0.0" y="114" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cuW-tb-FWK" id="huI-Px-N7l">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
@@ -123,7 +123,7 @@
                             <tableViewSection headerTitle="Select origin stop" id="dPO-vA-bhD">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="IA0-Wi-uoG">
-                                        <rect key="frame" x="0.0" y="201" width="600" height="60"/>
+                                        <rect key="frame" x="0.0" y="265" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IA0-Wi-uoG" id="t8a-mn-WmG">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
@@ -150,7 +150,7 @@
                             <tableViewSection headerTitle="Select Destination Stop" id="JIC-Na-JNC">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="edd-Nv-wMC">
-                                        <rect key="frame" x="0.0" y="312" width="600" height="60"/>
+                                        <rect key="frame" x="0.0" y="376" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="edd-Nv-wMC" id="5Dq-hp-HLb">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
@@ -177,7 +177,7 @@
                             <tableViewSection headerTitle="Navigate" id="qZt-Sd-83X">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="RYN-QE-xOg">
-                                        <rect key="frame" x="0.0" y="423" width="600" height="60"/>
+                                        <rect key="frame" x="0.0" y="487" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RYN-QE-xOg" id="Y2N-CZ-ghj">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
@@ -221,7 +221,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZO-GD-8N3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1186" y="492"/>
+            <point key="canvasLocation" x="1174" y="492"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gsj-xd-t8K">
@@ -234,7 +234,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="w89-YZ-XU6" kind="relationship" relationship="rootViewController" id="KxV-no-ckv"/>
+                        <segue destination="9Kk-TF-NsB" kind="relationship" relationship="rootViewController" id="NTH-9i-I8Z"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="foe-Jr-9LP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -287,6 +287,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="stopsLeft" destination="rDw-DL-MZm" id="xh1-CN-Mqf"/>
                         <outlet property="timelineView" destination="2UB-Tp-9MK" id="hEo-zM-Fps"/>
                     </connections>
                 </viewController>
@@ -297,6 +298,5 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="U3k-iQ-ch1"/>
-        <segue reference="KxV-no-ckv"/>
     </inferredMetricsTieBreakers>
 </document>

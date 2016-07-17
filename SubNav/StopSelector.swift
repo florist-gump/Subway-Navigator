@@ -30,7 +30,7 @@ class StopSelector: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+
         pickerView!.dataSource = self
         pickerView!.delegate = self
         pickerView!.selectionStyle = .None
@@ -62,7 +62,7 @@ extension StopSelector: PickerViewDataSource {
 
 extension StopSelector: PickerViewDelegate {
     func pickerViewHeightForRows(pickerView: PickerView) -> CGFloat {
-        return 50.0 // In this example I'm returning arbitrary 50.0pt but you should return the row height you want.
+        return 50.0
     }
     
     func pickerView(pickerView: PickerView, didSelectRow row: Int, index: Int) {

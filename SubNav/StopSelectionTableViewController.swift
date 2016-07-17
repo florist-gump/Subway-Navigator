@@ -7,15 +7,13 @@
 //
 
 import UIKit
-import SwiftCSV
 
 class StopSelectionTableViewController: UITableViewController {
-    @IBOutlet weak var line: UISegmentedControl!
     @IBOutlet weak var originLabel:UILabel?
     @IBOutlet weak var destinationLabel:UILabel?
     
     @IBAction func startNavigation(x:UIButton) {
-        if pickedOrigin == nil || pickedDestination == nil {
+        if (pickedOrigin == nil || pickedDestination == nil) && (pickedOrigin != pickedDestination) {
             let stopAlert = UIAlertController(title: "Stops not selected", message: "Please make sure you selected a origion and destination stop", preferredStyle: UIAlertControllerStyle.Alert)
             
             stopAlert.addAction(UIAlertAction(title: "Okay", style: .Default, handler: { (action: UIAlertAction!) in
@@ -26,30 +24,28 @@ class StopSelectionTableViewController: UITableViewController {
         } else {
             performSegueWithIdentifier("Navigate", sender: nil)
         }
-
     }
     
-    @IBAction func changeLine(x:UISegmentedControl) {
-        stopNames = stopNames!.reverse()
+    @IBAction func changeLine(segmentedControl:UISegmentedControl) {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            line.changeLine("in")
+        } else {
+            line.changeLine("out")
+        }
+        stopNames = self.line.stopNames()
     }
     
     var pickedOrigin: String?
     var pickedDestination: String?
     
-    var stops:CSV?
     var stopNames:[String]?
+    var line:Line!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Select"
-        let fileLocation = NSBundle.mainBundle().pathForResource("stops", ofType: "csv")!
-        do {
-            stops = try CSV(name: fileLocation)
-            stopNames = stops?.columns["stopname"]
-        } catch {
-            print("error reading csv ")
-        }
-        
+        line = Line(line: "out")
+        stopNames = line.stopNames()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -59,7 +55,11 @@ class StopSelectionTableViewController: UITableViewController {
             stopSelector.stopNames = stopNames
             
             if segue.identifier == "SelectOriginStop" {
-                stopSelector.currentSelectedValue = pickedOrigin
+                if (pickedOrigin != nil) {
+                    stopSelector.currentSelectedValue = pickedOrigin
+                } else {
+                    stopSelector.currentSelectedValue = stopNames![0]
+                }
                 stopSelector.updateSelectedValue = { (newSelectedValue) in
                     self.pickedOrigin = newSelectedValue
                     self.originLabel!.text = self.pickedOrigin
@@ -80,12 +80,8 @@ class StopSelectionTableViewController: UITableViewController {
         }
         if segue.identifier == "Navigate" {
             let navController = segue.destinationViewController as! NavigationViewController
-            let origin = stopNames!.indexOf(pickedOrigin!)
-            let dest = stopNames!.indexOf(pickedDestination!)
-            let stopNameSelection = stopNames![origin!...dest!]
-            
-            navController.stops = Array(stopNameSelection)
-            navController.currentStop = navController.stops.count/2
+            let stopsBetween = line.stopsBetween(pickedOrigin!, destination: pickedDestination!)
+            navController.stops = stopsBetween
         }
 
     }
