@@ -9,6 +9,8 @@
 import UIKit
 import CoreMotion
 import CoreLocation
+import AudioToolbox
+import ChameleonFramework
 
 class NavigationViewController: UIViewController {
     
@@ -45,20 +47,29 @@ class NavigationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        initView()
+    }
+    
+    func initView() {
         title = "Navigate"
         self.navigationItem.hidesBackButton = true
+        
+        stopsLeft?.text = String(stops.count-1)
         var stopNames:[String] = [String]()
         var stopTimes:[String] = [String]()
+        let calendar = NSCalendar.currentCalendar()
+        var currentTimeOffset:Float = 0.0
         for stop in stops {
             stopNames.append(stop.name)
-            stopTimes.append(NSString(format: "%.2f", stop.stopTime+stop.timeToNextStop) as String)
+            let date = calendar.dateByAddingUnit(.Minute, value: Int(currentTimeOffset), toDate: NSDate(), options: [])
+            let components = calendar.components([ .Hour, .Minute, .Second], fromDate: date!)
+            stopTimes.append(String(format: "%02d:%02d", components.hour, components.minute))
+            currentTimeOffset = currentTimeOffset + stop.stopTime + stop.timeToNextStop
         }
         timeline = TimeLineViewControl(timeArray: stopTimes, andTimeDescriptionArray: stopNames as [AnyObject], andCurrentStatus: Int32(currentStop+1), andFrame: timelineView!.frame)
         timelineView?.addSubview(timeline!)
-        stopsLeft?.text = String(stops.count)
-        notifyUser()
-        initLocationServices()
-        //presentPauseScreen()
+        
+        presentPauseScreen()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -67,8 +78,13 @@ class NavigationViewController: UIViewController {
     }
     
     func updateWith(status:Int) {
-        timeline?.updateCurrentStatus(Int32(currentStop+1))
-        stopsLeft?.text = String(stops.count - status)
+        if status < stops.count {
+            timeline?.updateCurrentStatus(Int32(currentStop+1))
+            stopsLeft?.text = String(stops.count - status - 1)
+            if status == stops.count - 1 {
+                notifyUser("Please get off at the next stop!", message: "Your stop is coming up.")
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,15 +92,25 @@ class NavigationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func notifyUser() {
-        // create a corresponding local notification
-        let notification = UILocalNotification()
-        notification.alertBody = "Please get off at the next stop!"
-        notification.alertAction = "open"
-        notification.fireDate = NSDate(timeIntervalSinceNow: NSTimeInterval(10.0))
-        notification.soundName = UILocalNotificationDefaultSoundName
-        
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+    func notifyUser(title: String, message: String) {
+        let state = UIApplication.sharedApplication().applicationState
+        if (state == UIApplicationState.Background || state == UIApplicationState.Inactive)
+        {
+            let notification = UILocalNotification()
+            notification.alertBody = title
+            notification.alertAction = "open"
+            notification.fireDate = NSDate(timeIntervalSinceNow: NSTimeInterval(10.0))
+            notification.soundName = UILocalNotificationDefaultSoundName
+            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        } else {
+            let getOffAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+            
+            getOffAlert.addAction(UIAlertAction(title: "Okay", style: .Default, handler: nil))
+            
+            presentViewController(getOffAlert, animated: true, completion: nil)
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        }
+       
     }
     
     func initLocationServices() {
@@ -131,28 +157,74 @@ class NavigationViewController: UIViewController {
         })
     }
     
-    func buttonClicked() {
+    func removePauseView() {
         darkBlurView.removeFromSuperview()
+        initLocationServices()
     }
     
     func presentPauseScreen() {
-        let darkBlur = UIBlurEffect(style: .Dark)
-        darkBlurView = UIVisualEffectView(effect: darkBlur)
-        darkBlurView.frame = self.view.bounds
-        
-        let label = UILabel()
-        label.text = "Please start navigation as soon as your on the train"
-        label.sizeToFit()
-        label.frame.origin = CGPoint(x: 12, y: 12)
-        
-        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
-        button.setTitle("Start", forState: .Normal)
-        button.addTarget(self, action:#selector(self.buttonClicked), forControlEvents: .TouchUpInside)
-        
-        darkBlurView.contentView.addSubview(button)
         let window = UIApplication.sharedApplication().keyWindow
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        darkBlurView = UIVisualEffectView(effect: blurEffect)
+        darkBlurView.frame = window!.bounds
         window!.addSubview(darkBlurView)
+        
+        let vibrancyEffect = UIVibrancyEffect(forBlurEffect: blurEffect)
+        let vibrancyEffectView = UIVisualEffectView(effect: vibrancyEffect)
+        vibrancyEffectView.frame = view.bounds
 
+        let title = UILabel()
+        title.text = "Navigation Paused"
+        title.font = UIFont.systemFontOfSize(25.0)
+        title.sizeToFit()
+        title.translatesAutoresizingMaskIntoConstraints = false
+        
+        let description = UILabel()
+        description.text = "Please start the navigation as soon as you are on the subway!"
+        description.font = UIFont.systemFontOfSize(15.0)
+        description.textAlignment = .Center
+        description.lineBreakMode = .ByWordWrapping
+        description.numberOfLines = 0 //set to display over multiple lines
+        description.translatesAutoresizingMaskIntoConstraints = false
+        
+        let button = UIButton()        
+        button.setTitle("Start Navigation", forState: .Normal)
+        button.addTarget(self, action:#selector(self.removePauseView), forControlEvents: .TouchUpInside)
+        button.sizeToFit()
+        button.contentEdgeInsets = UIEdgeInsetsMake(10.0, 15.0, 10.0, 15.0) // add padding
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        vibrancyEffectView.contentView.addSubview(title)
+        vibrancyEffectView.contentView.addSubview(description)
+        vibrancyEffectView.contentView.addSubview(button)
+        darkBlurView.contentView.addSubview(vibrancyEffectView)
+        
+        // add contraints
+        // title
+        var horizontalConstraint = NSLayoutConstraint(item: title, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: vibrancyEffectView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
+        vibrancyEffectView.addConstraint(horizontalConstraint)
+        
+        var verticalConstraint = NSLayoutConstraint(item: title, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: vibrancyEffectView, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: -150)
+        vibrancyEffectView.addConstraint(verticalConstraint)
+        
+        // description
+        horizontalConstraint = NSLayoutConstraint(item: description, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: vibrancyEffectView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
+        vibrancyEffectView.addConstraint(horizontalConstraint)
+        
+        verticalConstraint = NSLayoutConstraint(item: description, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: title, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 100)
+        vibrancyEffectView.addConstraint(verticalConstraint)
+        
+        
+        let widthConstraint = NSLayoutConstraint(item: description, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: vibrancyEffectView, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: -50)
+        vibrancyEffectView.addConstraint(widthConstraint)
+        
+        // button
+        horizontalConstraint = NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: vibrancyEffectView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
+        vibrancyEffectView.addConstraint(horizontalConstraint)
+        
+        verticalConstraint = NSLayoutConstraint(item: button, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: description, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 200)
+        vibrancyEffectView.addConstraint(verticalConstraint)
+        
     }
 
 
