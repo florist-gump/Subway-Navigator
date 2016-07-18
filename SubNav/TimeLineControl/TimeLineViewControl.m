@@ -19,7 +19,7 @@ const float BETTWEEN_LABEL_OFFSET = 20;
 const float LINE_WIDTH = 2.0;
 const float CIRCLE_RADIUS = 3.0;
 const float INITIAL_PROGRESS_CONTAINER_WIDTH = 20.0;
-const float PROGRESS_VIEW_CONTAINER_LEFT = 51.0;
+float PROGRESS_VIEW_CONTAINER_LEFT = 100.0;
 const float VIEW_WIDTH = 225.0;
 
 @interface TimeLineViewControl () {
@@ -81,6 +81,7 @@ const float VIEW_WIDTH = 225.0;
 - (id)initWithTimeArray:(NSArray *)time andTimeDescriptionArray:(NSArray *)timeDescriptions andCurrentStatus:(int)status andFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        PROGRESS_VIEW_CONTAINER_LEFT = frame.size.width/2-50;
         viewheight = frame.size.height;
         leftWidth = frame.size.width - (PROGRESS_VIEW_CONTAINER_LEFT + INITIAL_PROGRESS_CONTAINER_WIDTH + CIRCLE_RADIUS * 2);
         self.progressViewContainer = [[UIView alloc] init ];
@@ -98,7 +99,7 @@ const float VIEW_WIDTH = 225.0;
          self.progressDescriptionViewContainer.layer.borderWidth = 1;
          self.progressViewContainer.layer.borderColor = UIColor.greenColor.CGColor;
          self.progressViewContainer.layer.borderWidth = 1;
-        */
+         */
         [self addTimeDescriptionLabels:timeDescriptions andTime:time currentStatus:status];
         [self setNeedsUpdateConstraints];
         [self addProgressBasedOnLabels:self.labelDscriptionsArray currentStatus:status];
@@ -122,7 +123,7 @@ const float VIEW_WIDTH = 225.0;
         label.textColor = i < currentStatus ? [UIColor blackColor] : [UIColor grayColor];
         label.textAlignment = NSTextAlignmentRight;
         label.lineBreakMode = NSLineBreakByWordWrapping;
-        [label setFont:[UIFont fontWithName:@"HelveticaNeue" size:14.0]];
+        [label setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:14.0]];
         [self.timeViewContainer addSubview:label];
         [self.labelTimesArray addObject:label];
         
@@ -163,7 +164,7 @@ const float VIEW_WIDTH = 225.0;
         label.textColor = i < currentStatus ? [UIColor blackColor] : [UIColor grayColor];
         label.textAlignment = NSTextAlignmentLeft;
         label.lineBreakMode = NSLineBreakByWordWrapping;
-        [label setFont:[UIFont fontWithName:@"HelveticaNeue" size:16.0]];
+        [label setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:16.0]];
         [self.progressDescriptionViewContainer addSubview:label];
         [label makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(_progressDescriptionViewContainer).with.offset(7);
@@ -272,7 +273,7 @@ const float VIEW_WIDTH = 225.0;
         lineLayer.strokeColor = strokeColor.CGColor;
         i++;
     }
-
+    
 }
 
 - (CAShapeLayer *)getLayerWithLine:(UIBezierPath *)line andStrokeColor:(UIColor *)strokeColor {

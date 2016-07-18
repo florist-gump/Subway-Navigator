@@ -14,7 +14,7 @@ import ChameleonFramework
 
 class NavigationViewController: UIViewController {
     
-    @IBOutlet weak var timelineView:UIView?
+    @IBOutlet weak var timelineView:UIScrollView?
     @IBOutlet weak var stopsLeft:UILabel?
     
     
@@ -66,7 +66,12 @@ class NavigationViewController: UIViewController {
             stopTimes.append(String(format: "%02d:%02d", components.hour, components.minute))
             currentTimeOffset = currentTimeOffset + stop.stopTime + stop.timeToNextStop
         }
-        timeline = TimeLineViewControl(timeArray: stopTimes, andTimeDescriptionArray: stopNames as [AnyObject], andCurrentStatus: Int32(currentStop+1), andFrame: timelineView!.frame)
+        let frame = CGRectMake(0, 0, self.view.frame.size.width - 30, 200)
+        timeline = TimeLineViewControl(timeArray: stopTimes, andTimeDescriptionArray: stopNames as [AnyObject], andCurrentStatus: Int32(currentStop+1), andFrame: frame)
+        
+        timelineView!.contentSize = CGSize(width: self.view.frame.size.width - 40, height: timeline!.viewheight+20)
+        timelineView!.showsVerticalScrollIndicator = false
+        timelineView!.showsHorizontalScrollIndicator = false
         timelineView?.addSubview(timeline!)
         
         presentPauseScreen()

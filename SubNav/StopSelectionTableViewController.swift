@@ -13,8 +13,8 @@ class StopSelectionTableViewController: UITableViewController {
     @IBOutlet weak var destinationLabel:UILabel?
     
     @IBAction func startNavigation(x:UIButton) {
-        if (pickedOrigin == nil || pickedDestination == nil) && (pickedOrigin != pickedDestination) {
-            let stopAlert = UIAlertController(title: "Stops not selected", message: "Please make sure you selected a origion and destination stop", preferredStyle: UIAlertControllerStyle.Alert)
+        if pickedOrigin == nil || pickedDestination == nil  || pickedOrigin == pickedDestination {
+            let stopAlert = UIAlertController(title: "Stops not selected", message: "Please make sure you selected valid origin and destination stops", preferredStyle: UIAlertControllerStyle.Alert)
             
             stopAlert.addAction(UIAlertAction(title: "Okay", style: .Default, handler: { (action: UIAlertAction!) in
                 
@@ -46,6 +46,9 @@ class StopSelectionTableViewController: UITableViewController {
         title = "Select"
         line = Line(line: "out")
         stopNames = line.stopNames()
+        //temp
+        pickedOrigin = "Kelvinbridge"
+        pickedDestination = "Cessnock"
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
