@@ -1,16 +1,16 @@
 stop_name,stop_time,time_to_next_stop
-Kelvinbridge,2,5
-St. George's Cross,2,5
-Cowcaddens,2,5
-Buchanan Street,2,5
-St. Enoch,2,5
-Brige Street,2,5
-West Street,2,5
-Shields Road,2,5
-Kinning Park,2,5
-Cessnock,2,5
-Ibrox,2,5
-Govan,2,5
-Partick,2,5
-Kelvinhall,2,5
-Hillhead,2,5
+Kelvinbridge,20,73
+St. George's Cross,22,84
+Cowcaddens,22,93
+Buchanan Street,28,55
+St. Enoch,25,68
+Brige Street,21,53
+West Street,19,60
+Shields Road,20,81
+Kinning Park,25,51
+Cessnock,20,64
+Ibrox,22,80
+Govan,49,88
+Partick,21,59
+Kelvinhall,27,61
+Hillhead,32,78

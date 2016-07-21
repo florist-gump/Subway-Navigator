@@ -61,7 +61,7 @@ class NavigationViewController: UIViewController {
         var currentTimeOffset:Float = 0.0
         for stop in stops {
             stopNames.append(stop.name)
-            let date = calendar.dateByAddingUnit(.Minute, value: Int(currentTimeOffset), toDate: NSDate(), options: [])
+            let date = calendar.dateByAddingUnit(.Second, value: Int(currentTimeOffset), toDate: NSDate(), options: [])
             let components = calendar.components([ .Hour, .Minute, .Second], fromDate: date!)
             stopTimes.append(String(format: "%02d:%02d", components.hour, components.minute))
             currentTimeOffset = currentTimeOffset + stop.stopTime + stop.timeToNextStop
@@ -149,15 +149,20 @@ class NavigationViewController: UIViewController {
         locationManager.allowsBackgroundLocationUpdates = true
         
         locationManager.startUpdatingLocation()
-        
+
         if (motionManager == nil) {
             motionManager = CMMotionManager()
         }
-        
+        motionManager?.deviceMotionUpdateInterval = 0.01
         motionManager?.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: { (data: CMDeviceMotion?, error: NSError?) in
             print("x:  \(data!.userAcceleration.x)")
             print("y: \(data!.userAcceleration.y)")
             print("z: \(data!.userAcceleration.z)")
+            
+            // update UI
+            NSOperationQueue.mainQueue().addOperationWithBlock {
+                
+            }
             
         })
     }
