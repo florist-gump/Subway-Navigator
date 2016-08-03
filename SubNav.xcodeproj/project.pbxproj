@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C1FEF611D4CD3CF0087F4A6 /* Icon-App-29x29@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C1FEF541D4CD3CF0087F4A6 /* Icon-App-29x29@1x.png */; };
+		5C1FEF621D4CD3CF0087F4A6 /* Icon-App-29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C1FEF551D4CD3CF0087F4A6 /* Icon-App-29x29@2x.png */; };
+		5C1FEF631D4CD3CF0087F4A6 /* Icon-App-29x29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C1FEF561D4CD3CF0087F4A6 /* Icon-App-29x29@3x.png */; };
+		5C1FEF641D4CD3CF0087F4A6 /* Icon-App-40x40@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C1FEF571D4CD3CF0087F4A6 /* Icon-App-40x40@1x.png */; };
+		5C1FEF651D4CD3CF0087F4A6 /* Icon-App-40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C1FEF581D4CD3CF0087F4A6 /* Icon-App-40x40@2x.png */; };
+		5C1FEF661D4CD3CF0087F4A6 /* Icon-App-40x40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C1FEF591D4CD3CF0087F4A6 /* Icon-App-40x40@3x.png */; };
+		5C1FEF671D4CD3CF0087F4A6 /* Icon-App-60x60@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C1FEF5A1D4CD3CF0087F4A6 /* Icon-App-60x60@1x.png */; };
+		5C1FEF681D4CD3CF0087F4A6 /* Icon-App-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C1FEF5B1D4CD3CF0087F4A6 /* Icon-App-60x60@2x.png */; };
+		5C1FEF691D4CD3CF0087F4A6 /* Icon-App-60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C1FEF5C1D4CD3CF0087F4A6 /* Icon-App-60x60@3x.png */; };
+		5C1FEF6A1D4CD3CF0087F4A6 /* Icon-App-76x76@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C1FEF5D1D4CD3CF0087F4A6 /* Icon-App-76x76@1x.png */; };
+		5C1FEF6B1D4CD3CF0087F4A6 /* Icon-App-76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C1FEF5E1D4CD3CF0087F4A6 /* Icon-App-76x76@2x.png */; };
+		5C1FEF6C1D4CD3CF0087F4A6 /* Icon-App-76x76@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C1FEF5F1D4CD3CF0087F4A6 /* Icon-App-76x76@3x.png */; };
+		5C1FEF6D1D4CD3CF0087F4A6 /* Icon-App-83.5x83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C1FEF601D4CD3CF0087F4A6 /* Icon-App-83.5x83.5@2x.png */; };
+		5C1FEF711D4CD56C0087F4A6 /* Launch_Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C1FEF701D4CD56C0087F4A6 /* Launch_Image.png */; };
 		5C3824831D32B18200D5A6A6 /* Glasgow_Subway.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3824821D32B18200D5A6A6 /* Glasgow_Subway.svg.png */; };
-		5C3824901D32B47700D5A6A6 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3824851D32B47700D5A6A6 /* Icon-40.png */; };
-		5C3824911D32B47700D5A6A6 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3824861D32B47700D5A6A6 /* Icon-40@2x.png */; };
-		5C3824921D32B47700D5A6A6 /* Icon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3824871D32B47700D5A6A6 /* Icon-40@3x.png */; };
-		5C3824931D32B47700D5A6A6 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3824881D32B47700D5A6A6 /* Icon-60@2x.png */; };
-		5C3824941D32B47700D5A6A6 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3824891D32B47700D5A6A6 /* Icon-60@3x.png */; };
-		5C3824951D32B47700D5A6A6 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C38248A1D32B47700D5A6A6 /* Icon-76.png */; };
-		5C3824961D32B47700D5A6A6 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C38248B1D32B47700D5A6A6 /* Icon-76@2x.png */; };
-		5C3824971D32B47700D5A6A6 /* Icon-83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C38248C1D32B47700D5A6A6 /* Icon-83.5@2x.png */; };
-		5C3824981D32B47700D5A6A6 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C38248D1D32B47700D5A6A6 /* Icon-Small.png */; };
-		5C3824991D32B47700D5A6A6 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C38248E1D32B47700D5A6A6 /* Icon-Small@2x.png */; };
-		5C38249A1D32B47700D5A6A6 /* Icon-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C38248F1D32B47700D5A6A6 /* Icon-Small@3x.png */; };
+		5C3CF4751D50B68B009DBF3D /* ConfiguredMLP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CF4741D50B68B009DBF3D /* ConfiguredMLP.swift */; };
 		5C92E3691D31042C009CC4B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E3681D31042C009CC4B3 /* AppDelegate.swift */; };
 		5C92E36B1D31042C009CC4B3 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E36A1D31042C009CC4B3 /* NavigationViewController.swift */; };
 		5C92E36E1D31042C009CC4B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C92E36C1D31042C009CC4B3 /* Main.storyboard */; };
@@ -45,18 +49,22 @@
 
 /* Begin PBXFileReference section */
 		45444DBF9835DCBA46E69F36 /* Pods-SubNav.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubNav.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SubNav/Pods-SubNav.debug.xcconfig"; sourceTree = "<group>"; };
+		5C1FEF541D4CD3CF0087F4A6 /* Icon-App-29x29@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-29x29@1x.png"; sourceTree = "<group>"; };
+		5C1FEF551D4CD3CF0087F4A6 /* Icon-App-29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-29x29@2x.png"; sourceTree = "<group>"; };
+		5C1FEF561D4CD3CF0087F4A6 /* Icon-App-29x29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-29x29@3x.png"; sourceTree = "<group>"; };
+		5C1FEF571D4CD3CF0087F4A6 /* Icon-App-40x40@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-40x40@1x.png"; sourceTree = "<group>"; };
+		5C1FEF581D4CD3CF0087F4A6 /* Icon-App-40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-40x40@2x.png"; sourceTree = "<group>"; };
+		5C1FEF591D4CD3CF0087F4A6 /* Icon-App-40x40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-40x40@3x.png"; sourceTree = "<group>"; };
+		5C1FEF5A1D4CD3CF0087F4A6 /* Icon-App-60x60@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-60x60@1x.png"; sourceTree = "<group>"; };
+		5C1FEF5B1D4CD3CF0087F4A6 /* Icon-App-60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-60x60@2x.png"; sourceTree = "<group>"; };
+		5C1FEF5C1D4CD3CF0087F4A6 /* Icon-App-60x60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-60x60@3x.png"; sourceTree = "<group>"; };
+		5C1FEF5D1D4CD3CF0087F4A6 /* Icon-App-76x76@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-76x76@1x.png"; sourceTree = "<group>"; };
+		5C1FEF5E1D4CD3CF0087F4A6 /* Icon-App-76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-76x76@2x.png"; sourceTree = "<group>"; };
+		5C1FEF5F1D4CD3CF0087F4A6 /* Icon-App-76x76@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-76x76@3x.png"; sourceTree = "<group>"; };
+		5C1FEF601D4CD3CF0087F4A6 /* Icon-App-83.5x83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-83.5x83.5@2x.png"; sourceTree = "<group>"; };
+		5C1FEF701D4CD56C0087F4A6 /* Launch_Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch_Image.png; sourceTree = "<group>"; };
 		5C3824821D32B18200D5A6A6 /* Glasgow_Subway.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Glasgow_Subway.svg.png; sourceTree = "<group>"; };
-		5C3824851D32B47700D5A6A6 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
-		5C3824861D32B47700D5A6A6 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
-		5C3824871D32B47700D5A6A6 /* Icon-40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@3x.png"; sourceTree = "<group>"; };
-		5C3824881D32B47700D5A6A6 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
-		5C3824891D32B47700D5A6A6 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
-		5C38248A1D32B47700D5A6A6 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
-		5C38248B1D32B47700D5A6A6 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
-		5C38248C1D32B47700D5A6A6 /* Icon-83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-83.5@2x.png"; sourceTree = "<group>"; };
-		5C38248D1D32B47700D5A6A6 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
-		5C38248E1D32B47700D5A6A6 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
-		5C38248F1D32B47700D5A6A6 /* Icon-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@3x.png"; sourceTree = "<group>"; };
+		5C3CF4741D50B68B009DBF3D /* ConfiguredMLP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguredMLP.swift; sourceTree = "<group>"; };
 		5C92E3651D31042C009CC4B3 /* SubNav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubNav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C92E3681D31042C009CC4B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C92E36A1D31042C009CC4B3 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
@@ -115,17 +123,19 @@
 		5C3824841D32B46100D5A6A6 /* app icons */ = {
 			isa = PBXGroup;
 			children = (
-				5C3824851D32B47700D5A6A6 /* Icon-40.png */,
-				5C3824861D32B47700D5A6A6 /* Icon-40@2x.png */,
-				5C3824871D32B47700D5A6A6 /* Icon-40@3x.png */,
-				5C3824881D32B47700D5A6A6 /* Icon-60@2x.png */,
-				5C3824891D32B47700D5A6A6 /* Icon-60@3x.png */,
-				5C38248A1D32B47700D5A6A6 /* Icon-76.png */,
-				5C38248B1D32B47700D5A6A6 /* Icon-76@2x.png */,
-				5C38248C1D32B47700D5A6A6 /* Icon-83.5@2x.png */,
-				5C38248D1D32B47700D5A6A6 /* Icon-Small.png */,
-				5C38248E1D32B47700D5A6A6 /* Icon-Small@2x.png */,
-				5C38248F1D32B47700D5A6A6 /* Icon-Small@3x.png */,
+				5C1FEF541D4CD3CF0087F4A6 /* Icon-App-29x29@1x.png */,
+				5C1FEF551D4CD3CF0087F4A6 /* Icon-App-29x29@2x.png */,
+				5C1FEF561D4CD3CF0087F4A6 /* Icon-App-29x29@3x.png */,
+				5C1FEF571D4CD3CF0087F4A6 /* Icon-App-40x40@1x.png */,
+				5C1FEF581D4CD3CF0087F4A6 /* Icon-App-40x40@2x.png */,
+				5C1FEF591D4CD3CF0087F4A6 /* Icon-App-40x40@3x.png */,
+				5C1FEF5A1D4CD3CF0087F4A6 /* Icon-App-60x60@1x.png */,
+				5C1FEF5B1D4CD3CF0087F4A6 /* Icon-App-60x60@2x.png */,
+				5C1FEF5C1D4CD3CF0087F4A6 /* Icon-App-60x60@3x.png */,
+				5C1FEF5D1D4CD3CF0087F4A6 /* Icon-App-76x76@1x.png */,
+				5C1FEF5E1D4CD3CF0087F4A6 /* Icon-App-76x76@2x.png */,
+				5C1FEF5F1D4CD3CF0087F4A6 /* Icon-App-76x76@3x.png */,
+				5C1FEF601D4CD3CF0087F4A6 /* Icon-App-83.5x83.5@2x.png */,
 			);
 			name = "app icons";
 			sourceTree = "<group>";
@@ -207,6 +217,7 @@
 		5C92E3A41D315E63009CC4B3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5C1FEF701D4CD56C0087F4A6 /* Launch_Image.png */,
 				5C3824841D32B46100D5A6A6 /* app icons */,
 				5C3824821D32B18200D5A6A6 /* Glasgow_Subway.svg.png */,
 				5CB6585D1D3B92640077D1FF /* Lines */,
@@ -246,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				5CB658611D3BAA300077D1FF /* Line.swift */,
+				5C3CF4741D50B68B009DBF3D /* ConfiguredMLP.swift */,
 				5CB658631D3BAA530077D1FF /* Stop.swift */,
 			);
 			name = Models;
@@ -335,23 +347,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C1FEF611D4CD3CF0087F4A6 /* Icon-App-29x29@1x.png in Resources */,
 				5C92E3A61D315FAE009CC4B3 /* out.csv in Resources */,
 				5C92E3731D31042C009CC4B3 /* LaunchScreen.storyboard in Resources */,
-				5C3824901D32B47700D5A6A6 /* Icon-40.png in Resources */,
+				5C1FEF661D4CD3CF0087F4A6 /* Icon-App-40x40@3x.png in Resources */,
 				5CB6585C1D3B91FF0077D1FF /* in.csv in Resources */,
-				5C3824991D32B47700D5A6A6 /* Icon-Small@2x.png in Resources */,
+				5C1FEF6D1D4CD3CF0087F4A6 /* Icon-App-83.5x83.5@2x.png in Resources */,
+				5C1FEF651D4CD3CF0087F4A6 /* Icon-App-40x40@2x.png in Resources */,
+				5C1FEF691D4CD3CF0087F4A6 /* Icon-App-60x60@3x.png in Resources */,
+				5C1FEF6A1D4CD3CF0087F4A6 /* Icon-App-76x76@1x.png in Resources */,
+				5C1FEF621D4CD3CF0087F4A6 /* Icon-App-29x29@2x.png in Resources */,
+				5C1FEF641D4CD3CF0087F4A6 /* Icon-App-40x40@1x.png in Resources */,
 				5C92E3701D31042C009CC4B3 /* Assets.xcassets in Resources */,
-				5C3824911D32B47700D5A6A6 /* Icon-40@2x.png in Resources */,
-				5C3824931D32B47700D5A6A6 /* Icon-60@2x.png in Resources */,
-				5C3824951D32B47700D5A6A6 /* Icon-76.png in Resources */,
-				5C3824941D32B47700D5A6A6 /* Icon-60@3x.png in Resources */,
-				5C3824981D32B47700D5A6A6 /* Icon-Small.png in Resources */,
+				5C1FEF711D4CD56C0087F4A6 /* Launch_Image.png in Resources */,
+				5C1FEF6C1D4CD3CF0087F4A6 /* Icon-App-76x76@3x.png in Resources */,
+				5C1FEF6B1D4CD3CF0087F4A6 /* Icon-App-76x76@2x.png in Resources */,
 				5C3824831D32B18200D5A6A6 /* Glasgow_Subway.svg.png in Resources */,
-				5C3824921D32B47700D5A6A6 /* Icon-40@3x.png in Resources */,
-				5C3824961D32B47700D5A6A6 /* Icon-76@2x.png in Resources */,
-				5C3824971D32B47700D5A6A6 /* Icon-83.5@2x.png in Resources */,
-				5C38249A1D32B47700D5A6A6 /* Icon-Small@3x.png in Resources */,
+				5C1FEF681D4CD3CF0087F4A6 /* Icon-App-60x60@2x.png in Resources */,
 				5C92E36E1D31042C009CC4B3 /* Main.storyboard in Resources */,
+				5C1FEF671D4CD3CF0087F4A6 /* Icon-App-60x60@1x.png in Resources */,
+				5C1FEF631D4CD3CF0087F4A6 /* Icon-App-29x29@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C92E3961D3107D0009CC4B3 /* MASConstraint.m in Sources */,
+				5C3CF4751D50B68B009DBF3D /* ConfiguredMLP.swift in Sources */,
 				5C92E3991D3107D0009CC4B3 /* MASViewAttribute.m in Sources */,
 				5C92E3A81D324491009CC4B3 /* StopSelectionTableViewController.swift in Sources */,
 				5C92E3971D3107D0009CC4B3 /* MASConstraintMaker.m in Sources */,

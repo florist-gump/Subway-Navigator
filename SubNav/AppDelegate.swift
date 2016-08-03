@@ -9,6 +9,7 @@
 import UIKit
 import ChameleonFramework
 import CoreLocation
+import MLPNeuralNet
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,9 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Chameleon.setGlobalThemeUsingPrimaryColor(FlatOrange(), withContentStyle: .Light)
         self.window?.tintColor = FlatOrange()
-        
+        // register for notifications
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))
-        
         return true
     }
 
@@ -43,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        //delete all notifications from notification menu when launching the app
         UIApplication.sharedApplication().cancelAllLocalNotifications()
     }
 

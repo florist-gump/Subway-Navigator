@@ -11,6 +11,7 @@ import CoreMotion
 import CoreLocation
 import AudioToolbox
 import ChameleonFramework
+import MLPNeuralNet
 
 class NavigationViewController: UIViewController {
     
@@ -31,6 +32,7 @@ class NavigationViewController: UIViewController {
         
         presentViewController(stopAlert, animated: true, completion: nil)
         locationManager.stopUpdatingLocation()
+        motionManager!.stopDeviceMotionUpdates()
     }
     
     
@@ -69,12 +71,12 @@ class NavigationViewController: UIViewController {
         let frame = CGRectMake(0, 0, self.view.frame.size.width - 30, 200)
         timeline = TimeLineViewControl(timeArray: stopTimes, andTimeDescriptionArray: stopNames as [AnyObject], andCurrentStatus: Int32(currentStop+1), andFrame: frame)
         
-        timelineView!.contentSize = CGSize(width: self.view.frame.size.width - 40, height: timeline!.viewheight+20)
+        timelineView!.contentSize = CGSize(width: self.view.frame.size.width - 40, height: timeline!.viewheight+20)        
         timelineView!.showsVerticalScrollIndicator = false
         timelineView!.showsHorizontalScrollIndicator = false
         timelineView?.addSubview(timeline!)
         
-        presentPauseScreen()
+        //presentPauseScreen()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -88,6 +90,8 @@ class NavigationViewController: UIViewController {
             stopsLeft?.text = String(stops.count - status - 1)
             if status == stops.count - 1 {
                 notifyUser("Please get off at the next stop!", message: "Your stop is coming up.")
+                locationManager.stopUpdatingLocation()
+                motionManager!.stopDeviceMotionUpdates()
             }
         }
     }
@@ -154,14 +158,25 @@ class NavigationViewController: UIViewController {
             motionManager = CMMotionManager()
         }
         motionManager?.deviceMotionUpdateInterval = 0.01
-        motionManager?.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: { (data: CMDeviceMotion?, error: NSError?) in
-            print("x:  \(data!.userAcceleration.x)")
-            print("y: \(data!.userAcceleration.y)")
-            print("z: \(data!.userAcceleration.z)")
+        
+        let model = ConfiguredMLP()
+                        
+        motionManager?.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: { (data: CMDeviceMotion?, error: NSError?) in            
+            
+            let x = data!.userAcceleration.x
+            let y = data!.userAcceleration.y
+            let z = data!.userAcceleration.z
+            let inputVector:[Double] = [pow(x,2),pow(y,2),pow(z,2)]
+            
+            let prediction = model.predict(inputVector)
+            print(prediction)
             
             // update UI
             NSOperationQueue.mainQueue().addOperationWithBlock {
-                
+                if (prediction > 0.5) {
+                    self.currentStop += 1
+                    self.updateWith(self.currentStop)
+                }
             }
             
         })
@@ -242,7 +257,7 @@ class NavigationViewController: UIViewController {
 
 extension NavigationViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("update")
+        print("locationManager did update location")
     }
 }
 
