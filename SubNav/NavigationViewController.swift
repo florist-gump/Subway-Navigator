@@ -160,11 +160,16 @@ class NavigationViewController: UIViewController {
         if (motionManager == nil) {
             motionManager = CMMotionManager()
         }
-        motionManager?.deviceMotionUpdateInterval = 0.02
+        let dt = 0.02
+        motionManager?.deviceMotionUpdateInterval = dt
         
         let model = ConfiguredMLP()
         let featureVector = FeatureVector(windowSize: 20, featureCount: 2, timeLineSize: 51)
-                        
+        
+        let (treshold_moving, treshold_stationary) = (5/dt, 2/dt)
+        var moving = 0 //stationary
+        var misclassification_count = 0.0
+        
         motionManager?.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: { (data: CMDeviceMotion?, error: NSError?) in            
             
             let acceleration = sqrt(pow(data!.userAcceleration.x,2) + pow(data!.userAcceleration.y,2) + pow(data!.userAcceleration.z,2))
@@ -173,18 +178,38 @@ class NavigationViewController: UIViewController {
             featureVector.addFeatureVector([acceleration,rotationRate])
             
             let prediction = model.predict(featureVector.getTimeLine())
-            print(1-prediction)
+            let currSatus = (1-prediction) > 0.5 ? 1 : 0
             
-            // update UI
-            NSOperationQueue.mainQueue().addOperationWithBlock {
-                if (prediction > 0.5) {
-                    //self.currentStop += 1
-                    //self.updateWith(self.currentStop)
+            print(moving)
+            if currSatus != moving {
+                misclassification_count += 1
+                if moving == 1 {
+                    if misclassification_count > treshold_stationary {
+                        moving = 0
+                        misclassification_count = 0
+                        self.stopDetected()
+                    }
+                } else {
+                    if misclassification_count > treshold_moving {
+                        moving = 1
+                        misclassification_count = 0
+                    }
                 }
+            } else {
+                misclassification_count = 0
             }
             
         })
     }
+    
+    func stopDetected() {
+        // update UI
+        NSOperationQueue.mainQueue().addOperationWithBlock {
+            self.currentStop += 1
+            self.updateWith(self.currentStop)
+        }
+    }
+
     
     func removePauseView() {
         darkBlurView.removeFromSuperview()

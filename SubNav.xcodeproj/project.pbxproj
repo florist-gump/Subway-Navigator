@@ -144,6 +144,16 @@
 			name = "app icons";
 			sourceTree = "<group>";
 		};
+		5C3CF47A1D52347E009DBF3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5C3CF4741D50B68B009DBF3D /* ConfiguredMLP.swift */,
+				5C3CF4761D51FFB9009DBF3D /* FeatureVector.swift */,
+				5C3CF4781D51FFCB009DBF3D /* MovingAverage.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		5C92E35C1D31042C009CC4B3 = {
 			isa = PBXGroup;
 			children = (
@@ -260,11 +270,9 @@
 		5CB658601D3BA7720077D1FF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5C3CF47A1D52347E009DBF3D /* Model */,
 				5CB658611D3BAA300077D1FF /* Line.swift */,
-				5C3CF4741D50B68B009DBF3D /* ConfiguredMLP.swift */,
 				5CB658631D3BAA530077D1FF /* Stop.swift */,
-				5C3CF4761D51FFB9009DBF3D /* FeatureVector.swift */,
-				5C3CF4781D51FFCB009DBF3D /* MovingAverage.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
