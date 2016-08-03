@@ -12,6 +12,7 @@ import CoreLocation
 import AudioToolbox
 import ChameleonFramework
 import MLPNeuralNet
+import SwiftCSV
 
 class NavigationViewController: UIViewController {
     
@@ -77,8 +78,9 @@ class NavigationViewController: UIViewController {
         timelineView?.addSubview(timeline!)
         
         // tmp
-        initLocationServices()
+        //initLocationServices()
         //presentPauseScreen()
+        runTestRun()
         
     }
     
@@ -91,8 +93,11 @@ class NavigationViewController: UIViewController {
         if status < stops.count {
             timeline?.updateCurrentStatus(Int32(currentStop+1))
             stopsLeft?.text = String(stops.count - status - 1)
-            if status == stops.count - 1 {
+            if status == stops.count - 2 {
                 notifyUser("Please get off at the next stop!", message: "Your stop is coming up.")
+            }
+            if status == stops.count - 1 {
+                notifyUser("This your stop please get off now!", message: "You reached your destination")
                 locationManager.stopUpdatingLocation()
                 motionManager!.stopDeviceMotionUpdates()
             }
@@ -119,8 +124,10 @@ class NavigationViewController: UIViewController {
             
             getOffAlert.addAction(UIAlertAction(title: "Okay", style: .Default, handler: nil))
             
-            presentViewController(getOffAlert, animated: true, completion: nil)
-            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            if self.presentedViewController == nil {                
+                presentViewController(getOffAlert, animated: true, completion: nil)
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            }
         }
        
     }
@@ -163,42 +170,13 @@ class NavigationViewController: UIViewController {
         let dt = 0.02
         motionManager?.deviceMotionUpdateInterval = dt
         
-        let model = ConfiguredMLP()
-        let featureVector = FeatureVector(windowSize: 20, featureCount: 2, timeLineSize: 51)
+        let model = Model(dt: dt)
+        model.delegate = self
         
-        let (treshold_moving, treshold_stationary) = (5/dt, 2/dt)
-        var moving = 0 //stationary
-        var misclassification_count = 0.0
-        
-        motionManager?.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: { (data: CMDeviceMotion?, error: NSError?) in            
-            
+        motionManager?.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: { (data: CMDeviceMotion?, error: NSError?) in
             let acceleration = sqrt(pow(data!.userAcceleration.x,2) + pow(data!.userAcceleration.y,2) + pow(data!.userAcceleration.z,2))
             let rotationRate = sqrt(pow(data!.rotationRate.x,2) + pow(data!.rotationRate.y,2) + pow(data!.rotationRate.z,2))
-            
-            featureVector.addFeatureVector([acceleration,rotationRate])
-            
-            let prediction = model.predict(featureVector.getTimeLine())
-            let currSatus = (1-prediction) > 0.5 ? 1 : 0
-            
-            print(moving)
-            if currSatus != moving {
-                misclassification_count += 1
-                if moving == 1 {
-                    if misclassification_count > treshold_stationary {
-                        moving = 0
-                        misclassification_count = 0
-                        self.stopDetected()
-                    }
-                } else {
-                    if misclassification_count > treshold_moving {
-                        moving = 1
-                        misclassification_count = 0
-                    }
-                }
-            } else {
-                misclassification_count = 0
-            }
-            
+            model.addFeatureVector([acceleration,rotationRate])
         })
     }
     
@@ -280,13 +258,50 @@ class NavigationViewController: UIViewController {
         vibrancyEffectView.addConstraint(verticalConstraint)
         
     }
-
-
+    
+    func runTestRun() {
+        print("testRun")
+        let dt = 0.02
+        
+        let model = Model(dt: dt)
+        model.delegate = self
+        
+        let qualityOfServiceClass = QOS_CLASS_BACKGROUND
+        let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
+        dispatch_async(backgroundQueue, {
+            let fileLocation = NSBundle.mainBundle().pathForResource("export", ofType: "csv")!
+            do {
+                let stopsCSV = try CSV(name: fileLocation)
+                print("reading CSV this can take a few mintues to complete")
+                for stopRow in stopsCSV.rows {
+                    let stopName = stopRow["stop_name"]
+                    let a_x = Double(stopRow["user_acc_x"]!)!
+                    let a_y = Double(stopRow["user_acc_y"]!)!
+                    let a_z = Double(stopRow["user_acc_z"]!)!
+                    let r_x = Double(stopRow["rotation_rate_x"]!)!
+                    let r_y = Double(stopRow["rotation_rate_y"]!)!
+                    let r_z = Double(stopRow["rotation_rate_z"]!)!
+                    let acceleration = sqrt(pow(a_x,2) + pow(a_y,2) + pow(a_z,2))
+                    let rotationRate = sqrt(pow(r_x,2) + pow(r_y,2) + pow(r_z,2))
+                    model.addFeatureVector([acceleration,rotationRate])
+                    print(stopName)
+                }
+                
+            } catch {
+                print("error during test run ")
+            }
+        })
+    }
 }
 
 extension NavigationViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("locationManager did update location")
+    }
+}
+extension NavigationViewController: StopDectionDelegate {
+    func stopDetected(sender: Model) {
+        self.stopDetected()
     }
 }
 
