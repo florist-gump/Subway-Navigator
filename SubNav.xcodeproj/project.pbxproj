@@ -23,6 +23,8 @@
 		5C1FEF711D4CD56C0087F4A6 /* Launch_Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C1FEF701D4CD56C0087F4A6 /* Launch_Image.png */; };
 		5C3824831D32B18200D5A6A6 /* Glasgow_Subway.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C3824821D32B18200D5A6A6 /* Glasgow_Subway.svg.png */; };
 		5C3CF4751D50B68B009DBF3D /* ConfiguredMLP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CF4741D50B68B009DBF3D /* ConfiguredMLP.swift */; };
+		5C3CF4771D51FFB9009DBF3D /* FeatureVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CF4761D51FFB9009DBF3D /* FeatureVector.swift */; };
+		5C3CF4791D51FFCB009DBF3D /* MovingAverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CF4781D51FFCB009DBF3D /* MovingAverage.swift */; };
 		5C92E3691D31042C009CC4B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E3681D31042C009CC4B3 /* AppDelegate.swift */; };
 		5C92E36B1D31042C009CC4B3 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E36A1D31042C009CC4B3 /* NavigationViewController.swift */; };
 		5C92E36E1D31042C009CC4B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C92E36C1D31042C009CC4B3 /* Main.storyboard */; };
@@ -65,6 +67,8 @@
 		5C1FEF701D4CD56C0087F4A6 /* Launch_Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Launch_Image.png; sourceTree = "<group>"; };
 		5C3824821D32B18200D5A6A6 /* Glasgow_Subway.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Glasgow_Subway.svg.png; sourceTree = "<group>"; };
 		5C3CF4741D50B68B009DBF3D /* ConfiguredMLP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguredMLP.swift; sourceTree = "<group>"; };
+		5C3CF4761D51FFB9009DBF3D /* FeatureVector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureVector.swift; sourceTree = "<group>"; };
+		5C3CF4781D51FFCB009DBF3D /* MovingAverage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovingAverage.swift; sourceTree = "<group>"; };
 		5C92E3651D31042C009CC4B3 /* SubNav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubNav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C92E3681D31042C009CC4B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C92E36A1D31042C009CC4B3 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +263,8 @@
 				5CB658611D3BAA300077D1FF /* Line.swift */,
 				5C3CF4741D50B68B009DBF3D /* ConfiguredMLP.swift */,
 				5CB658631D3BAA530077D1FF /* Stop.swift */,
+				5C3CF4761D51FFB9009DBF3D /* FeatureVector.swift */,
+				5C3CF4781D51FFCB009DBF3D /* MovingAverage.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -428,6 +434,7 @@
 				5C92E3961D3107D0009CC4B3 /* MASConstraint.m in Sources */,
 				5C3CF4751D50B68B009DBF3D /* ConfiguredMLP.swift in Sources */,
 				5C92E3991D3107D0009CC4B3 /* MASViewAttribute.m in Sources */,
+				5C3CF4771D51FFB9009DBF3D /* FeatureVector.swift in Sources */,
 				5C92E3A81D324491009CC4B3 /* StopSelectionTableViewController.swift in Sources */,
 				5C92E3971D3107D0009CC4B3 /* MASConstraintMaker.m in Sources */,
 				5C92E3AA1D32667C009CC4B3 /* StopSelector.swift in Sources */,
@@ -442,6 +449,7 @@
 				5C92E3981D3107D0009CC4B3 /* MASLayoutConstraint.m in Sources */,
 				5C92E3691D31042C009CC4B3 /* AppDelegate.swift in Sources */,
 				5C92E39A1D3107D0009CC4B3 /* MASViewConstraint.m in Sources */,
+				5C3CF4791D51FFCB009DBF3D /* MovingAverage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

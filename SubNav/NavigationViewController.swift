@@ -76,7 +76,10 @@ class NavigationViewController: UIViewController {
         timelineView!.showsHorizontalScrollIndicator = false
         timelineView?.addSubview(timeline!)
         
+        // tmp
+        initLocationServices()
         //presentPauseScreen()
+        
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -108,7 +111,7 @@ class NavigationViewController: UIViewController {
             let notification = UILocalNotification()
             notification.alertBody = title
             notification.alertAction = "open"
-            notification.fireDate = NSDate(timeIntervalSinceNow: NSTimeInterval(10.0))
+            notification.fireDate = NSDate(timeIntervalSinceNow: NSTimeInterval(0.0))
             notification.soundName = UILocalNotificationDefaultSoundName
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
         } else {
@@ -157,25 +160,26 @@ class NavigationViewController: UIViewController {
         if (motionManager == nil) {
             motionManager = CMMotionManager()
         }
-        motionManager?.deviceMotionUpdateInterval = 0.01
+        motionManager?.deviceMotionUpdateInterval = 0.02
         
         let model = ConfiguredMLP()
+        let featureVector = FeatureVector(windowSize: 20, featureCount: 2, timeLineSize: 51)
                         
         motionManager?.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: { (data: CMDeviceMotion?, error: NSError?) in            
             
-            let x = data!.userAcceleration.x
-            let y = data!.userAcceleration.y
-            let z = data!.userAcceleration.z
-            let inputVector:[Double] = [pow(x,2),pow(y,2),pow(z,2)]
+            let acceleration = sqrt(pow(data!.userAcceleration.x,2) + pow(data!.userAcceleration.y,2) + pow(data!.userAcceleration.z,2))
+            let rotationRate = sqrt(pow(data!.rotationRate.x,2) + pow(data!.rotationRate.y,2) + pow(data!.rotationRate.z,2))
             
-            let prediction = model.predict(inputVector)
-            print(prediction)
+            featureVector.addFeatureVector([acceleration,rotationRate])
+            
+            let prediction = model.predict(featureVector.getTimeLine())
+            print(1-prediction)
             
             // update UI
             NSOperationQueue.mainQueue().addOperationWithBlock {
                 if (prediction > 0.5) {
-                    self.currentStop += 1
-                    self.updateWith(self.currentStop)
+                    //self.currentStop += 1
+                    //self.updateWith(self.currentStop)
                 }
             }
             
