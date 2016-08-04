@@ -43,7 +43,7 @@ class StopSelectionTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Select"
+        title = "Select Stops"
         line = Line(line: "out")
         stopNames = line.stopNames()
         //tmp

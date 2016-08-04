@@ -24,16 +24,21 @@ class NavigationViewController: UIViewController {
         let stopAlert = UIAlertController(title: "Stop Navigating", message: "Are you sure you wan't to stop the navigation", preferredStyle: UIAlertControllerStyle.Alert)
         
         stopAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (action: UIAlertAction!) in
+            self.locationManager.stopUpdatingLocation()
+            self.motionManager!.stopDeviceMotionUpdates()
             self.navigationController?.popViewControllerAnimated(true)
         }))
         
         stopAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action: UIAlertAction!) in
             print("Action cancled")
         }))
-        
-        presentViewController(stopAlert, animated: true, completion: nil)
-        locationManager.stopUpdatingLocation()
-        motionManager!.stopDeviceMotionUpdates()
+        if stops.count - currentStop > 1 {
+            presentViewController(stopAlert, animated: true, completion: nil)
+        } else {
+            locationManager.stopUpdatingLocation()
+            motionManager!.stopDeviceMotionUpdates()
+            navigationController?.popViewControllerAnimated(true)
+        }
     }
     
     
@@ -79,8 +84,8 @@ class NavigationViewController: UIViewController {
         
         // tmp
         //initLocationServices()
-        //presentPauseScreen()
-        runTestRun()
+        presentPauseScreen()
+        //runTestRun()
         
     }
     
