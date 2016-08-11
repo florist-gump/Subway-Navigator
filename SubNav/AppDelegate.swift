@@ -9,7 +9,6 @@
 import UIKit
 import ChameleonFramework
 import CoreLocation
-import MLPNeuralNet
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -25,7 +25,7 @@
 		5C3CF4751D50B68B009DBF3D /* ConfiguredMLP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CF4741D50B68B009DBF3D /* ConfiguredMLP.swift */; };
 		5C3CF4771D51FFB9009DBF3D /* FeatureVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CF4761D51FFB9009DBF3D /* FeatureVector.swift */; };
 		5C3CF4791D51FFCB009DBF3D /* MovingAverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CF4781D51FFCB009DBF3D /* MovingAverage.swift */; };
-		5C3CF47C1D5234BE009DBF3D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CF47B1D5234BE009DBF3D /* Model.swift */; };
+		5C3CF47C1D5234BE009DBF3D /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CF47B1D5234BE009DBF3D /* NavigationModel.swift */; };
 		5C3CF47E1D525049009DBF3D /* export.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5C3CF47D1D525049009DBF3D /* export.csv */; };
 		5C92E3691D31042C009CC4B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E3681D31042C009CC4B3 /* AppDelegate.swift */; };
 		5C92E36B1D31042C009CC4B3 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E36A1D31042C009CC4B3 /* NavigationViewController.swift */; };
@@ -71,7 +71,7 @@
 		5C3CF4741D50B68B009DBF3D /* ConfiguredMLP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguredMLP.swift; sourceTree = "<group>"; };
 		5C3CF4761D51FFB9009DBF3D /* FeatureVector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureVector.swift; sourceTree = "<group>"; };
 		5C3CF4781D51FFCB009DBF3D /* MovingAverage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovingAverage.swift; sourceTree = "<group>"; };
-		5C3CF47B1D5234BE009DBF3D /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		5C3CF47B1D5234BE009DBF3D /* NavigationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
 		5C3CF47D1D525049009DBF3D /* export.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = export.csv; sourceTree = "<group>"; };
 		5C92E3651D31042C009CC4B3 /* SubNav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubNav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C92E3681D31042C009CC4B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,15 +148,15 @@
 			name = "app icons";
 			sourceTree = "<group>";
 		};
-		5C3CF47A1D52347E009DBF3D /* Model */ = {
+		5C3CF47A1D52347E009DBF3D /* Navigation Model */ = {
 			isa = PBXGroup;
 			children = (
 				5C3CF4741D50B68B009DBF3D /* ConfiguredMLP.swift */,
 				5C3CF4761D51FFB9009DBF3D /* FeatureVector.swift */,
 				5C3CF4781D51FFCB009DBF3D /* MovingAverage.swift */,
-				5C3CF47B1D5234BE009DBF3D /* Model.swift */,
+				5C3CF47B1D5234BE009DBF3D /* NavigationModel.swift */,
 			);
-			name = Model;
+			name = "Navigation Model";
 			sourceTree = "<group>";
 		};
 		5C92E35C1D31042C009CC4B3 = {
@@ -183,7 +183,7 @@
 				5C92E3A41D315E63009CC4B3 /* Resources */,
 				5C92E37A1D3107D0009CC4B3 /* TimeLineControl */,
 				5C92E3681D31042C009CC4B3 /* AppDelegate.swift */,
-				5CB658601D3BA7720077D1FF /* Models */,
+				5CB658601D3BA7720077D1FF /* Helper Functions */,
 				5CB6585E1D3BA73C0077D1FF /* Controllers */,
 				5C92E36F1D31042C009CC4B3 /* Assets.xcassets */,
 				5CB6585F1D3BA75C0077D1FF /* Storyboards */,
@@ -273,14 +273,14 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
-		5CB658601D3BA7720077D1FF /* Models */ = {
+		5CB658601D3BA7720077D1FF /* Helper Functions */ = {
 			isa = PBXGroup;
 			children = (
-				5C3CF47A1D52347E009DBF3D /* Model */,
+				5C3CF47A1D52347E009DBF3D /* Navigation Model */,
 				5CB658611D3BAA300077D1FF /* Line.swift */,
 				5CB658631D3BAA530077D1FF /* Stop.swift */,
 			);
-			name = Models;
+			name = "Helper Functions";
 			sourceTree = "<group>";
 		};
 		888E77DFAEE8657CB4ECD45A /* Pods */ = {
@@ -461,7 +461,7 @@
 				5C92E39E1D3107D0009CC4B3 /* TimeLineViewControl.m in Sources */,
 				5CB658641D3BAA530077D1FF /* Stop.swift in Sources */,
 				5C92E39B1D3107D0009CC4B3 /* NSArray+MASAdditions.m in Sources */,
-				5C3CF47C1D5234BE009DBF3D /* Model.swift in Sources */,
+				5C3CF47C1D5234BE009DBF3D /* NavigationModel.swift in Sources */,
 				5C92E3981D3107D0009CC4B3 /* MASLayoutConstraint.m in Sources */,
 				5C92E3691D31042C009CC4B3 /* AppDelegate.swift in Sources */,
 				5C92E39A1D3107D0009CC4B3 /* MASViewConstraint.m in Sources */,

@@ -22,7 +22,8 @@ class StopSelectionTableViewController: UITableViewController {
             
             presentViewController(stopAlert, animated: true, completion: nil)
         } else {
-            performSegueWithIdentifier("Navigate", sender: nil)
+            //performSegueWithIdentifier("Navigate", sender: nil)
+            performSegueWithIdentifier("DebugNavigate", sender: nil)
         }
     }
     
@@ -81,7 +82,7 @@ class StopSelectionTableViewController: UITableViewController {
                 }
             }
         }
-        if segue.identifier == "Navigate" {
+        if segue.identifier == "Navigate" || segue.identifier == "DebugNavigate"   {
             let navController = segue.destinationViewController as! NavigationViewController
             let stopsBetween = line.stopsBetween(pickedOrigin!, destination: pickedDestination!)
             navController.stops = stopsBetween

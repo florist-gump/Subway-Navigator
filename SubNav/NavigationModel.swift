@@ -8,44 +8,46 @@
 
 import Foundation
 
-protocol StopDectionDelegate: class {
-    func stopDetected(sender: Model)
+protocol NavigationModelDelegate: class {
+    func stopDetected(sender: NavigationModel)
+    func update(sender: NavigationModel, modelPrediction:Int, movementStatus:Int)
 }
 
-class Model {
-    weak var delegate:StopDectionDelegate?
+class NavigationModel {
+    weak var delegate:NavigationModelDelegate?
     
     let model = ConfiguredMLP()
-    let featureVector = FeatureVector(windowSize: 20, featureCount: 2, timeLineSize: 51)
+    let featureVector = FeatureVector(windowSize: 40, featureCount: 2, timeLineSize: 51)
     
     let treshold_moving:Double, treshold_stationary:Double
-    var moving = 0 //stationary
+    var movementStatus = 0 //stationary
     var misclassification_count = 0.0
     var dt:Double
     
     init(dt:Double) {
         self.dt = dt
-        (treshold_moving, treshold_stationary) = (5/dt, 2/dt)
+        (treshold_moving, treshold_stationary) = (6/dt, 3/dt)
     }
     
-    func addFeatureVector(vector:[Double]) {
+    func update(vector:[Double]) {
         featureVector.addFeatureVector(vector)
         
         let prediction = model.predict(featureVector.getTimeLine())
-        let currSatus = (1-prediction) > 0.5 ? 1 : 0
+        let currSatus = (prediction) > 0.5 ? 1 : 0
         
-        print(moving)
-        if currSatus != moving {
+        delegate?.update(self, modelPrediction: currSatus, movementStatus: movementStatus)
+        
+        if currSatus != movementStatus {
             misclassification_count += 1
-            if moving == 1 {
+            if movementStatus == 1 {
                 if misclassification_count > treshold_stationary {
-                    moving = 0
+                    movementStatus = 0
                     misclassification_count = 0
                     delegate?.stopDetected(self)
                 }
             } else {
                 if misclassification_count > treshold_moving {
-                    moving = 1
+                    movementStatus = 1
                     misclassification_count = 0
                 }
             }

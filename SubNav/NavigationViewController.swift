@@ -20,6 +20,9 @@ class NavigationViewController: UIViewController {
     @IBOutlet weak var stopsLeft:UILabel?
     
     
+    @IBOutlet weak var ModelPrediction:UILabel?
+    @IBOutlet weak var ModelMovementStatus:UILabel?
+    
     @IBAction func stop(sender: UIBarButtonItem) {
         let stopAlert = UIAlertController(title: "Stop Navigating", message: "Are you sure you wan't to stop the navigation", preferredStyle: UIAlertControllerStyle.Alert)
         
@@ -172,16 +175,16 @@ class NavigationViewController: UIViewController {
         if (motionManager == nil) {
             motionManager = CMMotionManager()
         }
-        let dt = 0.02
+        let dt = 0.01
         motionManager?.deviceMotionUpdateInterval = dt
         
-        let model = Model(dt: dt)
-        model.delegate = self
+        let navigationModel = NavigationModel(dt: dt)
+        navigationModel.delegate = self
         
         motionManager?.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: { (data: CMDeviceMotion?, error: NSError?) in
             let acceleration = sqrt(pow(data!.userAcceleration.x,2) + pow(data!.userAcceleration.y,2) + pow(data!.userAcceleration.z,2))
             let rotationRate = sqrt(pow(data!.rotationRate.x,2) + pow(data!.rotationRate.y,2) + pow(data!.rotationRate.z,2))
-            model.addFeatureVector([acceleration,rotationRate])
+            navigationModel.update([acceleration,rotationRate])
         })
     }
     
@@ -266,10 +269,10 @@ class NavigationViewController: UIViewController {
     
     func runTestRun() {
         print("testRun")
-        let dt = 0.02
+        let dt = 0.01
         
-        let model = Model(dt: dt)
-        model.delegate = self
+        let navigationModel = NavigationModel(dt: dt)
+        navigationModel.delegate = self
         
         let qualityOfServiceClass = QOS_CLASS_BACKGROUND
         let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
@@ -288,8 +291,10 @@ class NavigationViewController: UIViewController {
                     let r_z = Double(stopRow["rotation_rate_z"]!)!
                     let acceleration = sqrt(pow(a_x,2) + pow(a_y,2) + pow(a_z,2))
                     let rotationRate = sqrt(pow(r_x,2) + pow(r_y,2) + pow(r_z,2))
-                    model.addFeatureVector([acceleration,rotationRate])
-                    print(stopName)
+                    navigationModel.update([acceleration,rotationRate])
+                    if stopName != nil {
+                         print(stopName)
+                    }
                 }
                 
             } catch {
@@ -304,9 +309,16 @@ extension NavigationViewController: CLLocationManagerDelegate {
         print("locationManager did update location")
     }
 }
-extension NavigationViewController: StopDectionDelegate {
-    func stopDetected(sender: Model) {
+extension NavigationViewController: NavigationModelDelegate {
+    func stopDetected(sender: NavigationModel) {
         self.stopDetected()
+    }
+    
+    func update(sender: NavigationModel, modelPrediction: Int, movementStatus: Int) {
+        NSOperationQueue.mainQueue().addOperationWithBlock {
+            self.ModelPrediction?.text = String(modelPrediction)
+            self.ModelMovementStatus?.text = String(movementStatus)
+        }
     }
 }
 
