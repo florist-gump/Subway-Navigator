@@ -9,24 +9,20 @@
 import Foundation
 class FeatureVector {
     var timeLine: Array<Array<Double>>
-    var movingAverage: MovingAverage
     var timeLineSize:Int
     var featureCount:Int
     
-    init(windowSize: Int, featureCount:Int, timeLineSize:Int) {
-        movingAverage = MovingAverage(windowSize: windowSize, featureCount: featureCount)
+    init(featureCount:Int, timeLineSize:Int) {
         self.featureCount = featureCount
         self.timeLineSize = timeLineSize
         timeLine = Array(count: timeLineSize, repeatedValue: Array(count: featureCount, repeatedValue: 0.0))
     }
     
-    func addFeatureVector(values: Array<Double>) {
-        if timeLine.count <  timeLineSize {
-            timeLine.append(movingAverage.addFeatureVector(values))
-        } else {
+    func addFeatureVector(vector: Array<Double>) {
+        if timeLine.count >=  timeLineSize {
             timeLine.removeAtIndex(0)
-            timeLine.append(movingAverage.addFeatureVector(values))
         }
+        timeLine.append(vector)
     }
     
     func getTimeLine() -> Array<Double> {

@@ -17,7 +17,8 @@ class NavigationModel {
     weak var delegate:NavigationModelDelegate?
     
     let model = ConfiguredMLP()
-    let featureVector = FeatureVector(windowSize: 40, featureCount: 2, timeLineSize: 51)
+    let featureVector = FeatureVector(featureCount: 2, timeLineSize: 51)
+    let movingAverage = MovingAverage(windowSize: 40, featureCount: 6)
     
     let treshold_moving:Double, treshold_stationary:Double
     var movementStatus = 0 //stationary
@@ -30,7 +31,12 @@ class NavigationModel {
     }
     
     func update(vector:[Double]) {
-        featureVector.addFeatureVector(vector)
+        
+        let avg = movingAverage.addFeatureVector(vector)
+        let acceleration = sqrt(pow(avg[0],2) + pow(avg[1],2) + pow(avg[2],2))
+        let rotationRate = sqrt(pow(avg[3],2) + pow(avg[4],2) + pow(avg[5],2))
+        
+        featureVector.addFeatureVector([acceleration,rotationRate])
         
         let prediction = model.predict(featureVector.getTimeLine())
         let currSatus = (prediction) > 0.5 ? 1 : 0

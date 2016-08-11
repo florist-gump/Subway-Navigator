@@ -182,9 +182,7 @@ class NavigationViewController: UIViewController {
         navigationModel.delegate = self
         
         motionManager?.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: { (data: CMDeviceMotion?, error: NSError?) in
-            let acceleration = sqrt(pow(data!.userAcceleration.x,2) + pow(data!.userAcceleration.y,2) + pow(data!.userAcceleration.z,2))
-            let rotationRate = sqrt(pow(data!.rotationRate.x,2) + pow(data!.rotationRate.y,2) + pow(data!.rotationRate.z,2))
-            navigationModel.update([acceleration,rotationRate])
+            navigationModel.update([data!.userAcceleration.x,data!.userAcceleration.y,data!.userAcceleration.z,data!.rotationRate.x,data!.rotationRate.y,data!.rotationRate.z])
         })
     }
     
