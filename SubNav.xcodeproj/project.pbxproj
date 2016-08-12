@@ -27,6 +27,7 @@
 		5C3CF4791D51FFCB009DBF3D /* MovingAverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CF4781D51FFCB009DBF3D /* MovingAverage.swift */; };
 		5C3CF47C1D5234BE009DBF3D /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CF47B1D5234BE009DBF3D /* NavigationModel.swift */; };
 		5C3CF47E1D525049009DBF3D /* export.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5C3CF47D1D525049009DBF3D /* export.csv */; };
+		5C5FF0281D5E4D7D00FD88F3 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5FF0271D5E4D7D00FD88F3 /* XCTestCase.swift */; };
 		5C92E3691D31042C009CC4B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E3681D31042C009CC4B3 /* AppDelegate.swift */; };
 		5C92E36B1D31042C009CC4B3 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E36A1D31042C009CC4B3 /* NavigationViewController.swift */; };
 		5C92E36E1D31042C009CC4B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C92E36C1D31042C009CC4B3 /* Main.storyboard */; };
@@ -49,9 +50,21 @@
 		5CB658621D3BAA300077D1FF /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB658611D3BAA300077D1FF /* Line.swift */; };
 		5CB658641D3BAA530077D1FF /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB658631D3BAA530077D1FF /* Stop.swift */; };
 		726B9E3EB6BD863EE6C7FD97 /* Pods_SubNav.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D106036CBC4AF10E668BBA2A /* Pods_SubNav.framework */; };
+		8F529F43C288F1D1070B59A6 /* Pods_SubNavTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E87596CEA6424CBA688815DE /* Pods_SubNavTests.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5C5FF02A1D5E4D7D00FD88F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C92E35D1D31042C009CC4B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C92E3641D31042C009CC4B3;
+			remoteInfo = SubNav;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		37F833BD3C536DE077A57F77 /* Pods-SubNavTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubNavTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SubNavTests/Pods-SubNavTests.debug.xcconfig"; sourceTree = "<group>"; };
 		45444DBF9835DCBA46E69F36 /* Pods-SubNav.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubNav.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SubNav/Pods-SubNav.debug.xcconfig"; sourceTree = "<group>"; };
 		5C1FEF541D4CD3CF0087F4A6 /* Icon-App-29x29@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-29x29@1x.png"; sourceTree = "<group>"; };
 		5C1FEF551D4CD3CF0087F4A6 /* Icon-App-29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-29x29@2x.png"; sourceTree = "<group>"; };
@@ -73,6 +86,9 @@
 		5C3CF4781D51FFCB009DBF3D /* MovingAverage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovingAverage.swift; sourceTree = "<group>"; };
 		5C3CF47B1D5234BE009DBF3D /* NavigationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
 		5C3CF47D1D525049009DBF3D /* export.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = export.csv; sourceTree = "<group>"; };
+		5C5FF0251D5E4D7D00FD88F3 /* SubNavTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SubNavTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C5FF0271D5E4D7D00FD88F3 /* XCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
+		5C5FF0291D5E4D7D00FD88F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C92E3651D31042C009CC4B3 /* SubNav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubNav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C92E3681D31042C009CC4B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C92E36A1D31042C009CC4B3 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
@@ -114,9 +130,19 @@
 		5CB658631D3BAA530077D1FF /* Stop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		AB5DC6EF028977E79C9ECE69 /* Pods-SubNav.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubNav.release.xcconfig"; path = "Pods/Target Support Files/Pods-SubNav/Pods-SubNav.release.xcconfig"; sourceTree = "<group>"; };
 		D106036CBC4AF10E668BBA2A /* Pods_SubNav.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SubNav.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E87596CEA6424CBA688815DE /* Pods_SubNavTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SubNavTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F35FF99ED3998359D1CE364E /* Pods-SubNavTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SubNavTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SubNavTests/Pods-SubNavTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5C5FF0221D5E4D7D00FD88F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F529F43C288F1D1070B59A6 /* Pods_SubNavTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5C92E3621D31042C009CC4B3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -148,6 +174,15 @@
 			name = "app icons";
 			sourceTree = "<group>";
 		};
+		5C3BE37B1D5E343B0026F7A7 /* Stop Selection */ = {
+			isa = PBXGroup;
+			children = (
+				5CB658611D3BAA300077D1FF /* Line.swift */,
+				5CB658631D3BAA530077D1FF /* Stop.swift */,
+			);
+			name = "Stop Selection";
+			sourceTree = "<group>";
+		};
 		5C3CF47A1D52347E009DBF3D /* Navigation Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,10 +194,20 @@
 			name = "Navigation Model";
 			sourceTree = "<group>";
 		};
+		5C5FF0261D5E4D7D00FD88F3 /* SubNavTests */ = {
+			isa = PBXGroup;
+			children = (
+				5C5FF0271D5E4D7D00FD88F3 /* XCTestCase.swift */,
+				5C5FF0291D5E4D7D00FD88F3 /* Info.plist */,
+			);
+			path = SubNavTests;
+			sourceTree = "<group>";
+		};
 		5C92E35C1D31042C009CC4B3 = {
 			isa = PBXGroup;
 			children = (
 				5C92E3671D31042C009CC4B3 /* SubNav */,
+				5C5FF0261D5E4D7D00FD88F3 /* SubNavTests */,
 				5C92E3661D31042C009CC4B3 /* Products */,
 				888E77DFAEE8657CB4ECD45A /* Pods */,
 				B4DEC76E436A3BFD22A9D1CD /* Frameworks */,
@@ -173,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				5C92E3651D31042C009CC4B3 /* SubNav.app */,
+				5C5FF0251D5E4D7D00FD88F3 /* SubNavTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,7 +229,7 @@
 				5C92E3A41D315E63009CC4B3 /* Resources */,
 				5C92E37A1D3107D0009CC4B3 /* TimeLineControl */,
 				5C92E3681D31042C009CC4B3 /* AppDelegate.swift */,
-				5CB658601D3BA7720077D1FF /* Helper Functions */,
+				5CB658601D3BA7720077D1FF /* Helper classes */,
 				5CB6585E1D3BA73C0077D1FF /* Controllers */,
 				5C92E36F1D31042C009CC4B3 /* Assets.xcassets */,
 				5CB6585F1D3BA75C0077D1FF /* Storyboards */,
@@ -273,14 +319,13 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
-		5CB658601D3BA7720077D1FF /* Helper Functions */ = {
+		5CB658601D3BA7720077D1FF /* Helper classes */ = {
 			isa = PBXGroup;
 			children = (
+				5C3BE37B1D5E343B0026F7A7 /* Stop Selection */,
 				5C3CF47A1D52347E009DBF3D /* Navigation Model */,
-				5CB658611D3BAA300077D1FF /* Line.swift */,
-				5CB658631D3BAA530077D1FF /* Stop.swift */,
 			);
-			name = "Helper Functions";
+			name = "Helper classes";
 			sourceTree = "<group>";
 		};
 		888E77DFAEE8657CB4ECD45A /* Pods */ = {
@@ -288,6 +333,8 @@
 			children = (
 				45444DBF9835DCBA46E69F36 /* Pods-SubNav.debug.xcconfig */,
 				AB5DC6EF028977E79C9ECE69 /* Pods-SubNav.release.xcconfig */,
+				37F833BD3C536DE077A57F77 /* Pods-SubNavTests.debug.xcconfig */,
+				F35FF99ED3998359D1CE364E /* Pods-SubNavTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -296,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				D106036CBC4AF10E668BBA2A /* Pods_SubNav.framework */,
+				E87596CEA6424CBA688815DE /* Pods_SubNavTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -303,6 +351,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5C5FF0241D5E4D7D00FD88F3 /* SubNavTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C5FF02C1D5E4D7D00FD88F3 /* Build configuration list for PBXNativeTarget "SubNavTests" */;
+			buildPhases = (
+				C57407C284E6F6163DF0F287 /* [CP] Check Pods Manifest.lock */,
+				5C5FF0211D5E4D7D00FD88F3 /* Sources */,
+				5C5FF0221D5E4D7D00FD88F3 /* Frameworks */,
+				5C5FF0231D5E4D7D00FD88F3 /* Resources */,
+				B606230766C8BED1F97771CB /* [CP] Embed Pods Frameworks */,
+				42DC2F137E20462D1B855498 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C5FF02B1D5E4D7D00FD88F3 /* PBXTargetDependency */,
+			);
+			name = SubNavTests;
+			productName = SubNavTests;
+			productReference = 5C5FF0251D5E4D7D00FD88F3 /* SubNavTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5C92E3641D31042C009CC4B3 /* SubNav */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C92E3771D31042C009CC4B3 /* Build configuration list for PBXNativeTarget "SubNav" */;
@@ -333,6 +402,10 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Florian Deuerlein";
 				TargetAttributes = {
+					5C5FF0241D5E4D7D00FD88F3 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 5C92E3641D31042C009CC4B3;
+					};
 					5C92E3641D31042C009CC4B3 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = D24VSD9J58;
@@ -358,11 +431,19 @@
 			projectRoot = "";
 			targets = (
 				5C92E3641D31042C009CC4B3 /* SubNav */,
+				5C5FF0241D5E4D7D00FD88F3 /* SubNavTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5C5FF0231D5E4D7D00FD88F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5C92E3631D31042C009CC4B3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,7 +490,52 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SubNav/Pods-SubNav-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		42DC2F137E20462D1B855498 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SubNavTests/Pods-SubNavTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B606230766C8BED1F97771CB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SubNavTests/Pods-SubNavTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C1CB3D0A400235C7F8E9A5FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C57407C284E6F6163DF0F287 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -442,6 +568,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5C5FF0211D5E4D7D00FD88F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C5FF0281D5E4D7D00FD88F3 /* XCTestCase.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5C92E3611D31042C009CC4B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -471,6 +605,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5C5FF02B1D5E4D7D00FD88F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C92E3641D31042C009CC4B3 /* SubNav */;
+			targetProxy = 5C5FF02A1D5E4D7D00FD88F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		5C92E36C1D31042C009CC4B3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -491,6 +633,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5C5FF02D1D5E4D7D00FD88F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37F833BD3C536DE077A57F77 /* Pods-SubNavTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SubNavTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.fde.subnav.SubNavTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SubNav.app/SubNav";
+			};
+			name = Debug;
+		};
+		5C5FF02E1D5E4D7D00FD88F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F35FF99ED3998359D1CE364E /* Pods-SubNavTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SubNavTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uk.fde.subnav.SubNavTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SubNav.app/SubNav";
+			};
+			name = Release;
+		};
 		5C92E3751D31042C009CC4B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -609,6 +777,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5C5FF02C1D5E4D7D00FD88F3 /* Build configuration list for PBXNativeTarget "SubNavTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C5FF02D1D5E4D7D00FD88F3 /* Debug */,
+				5C5FF02E1D5E4D7D00FD88F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5C92E3601D31042C009CC4B3 /* Build configuration list for PBXProject "SubNav" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
