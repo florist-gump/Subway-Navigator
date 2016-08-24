@@ -47,9 +47,6 @@ class StopSelectionTableViewController: UITableViewController {
         title = "Select Stops"
         line = Line(line: "out")
         stopNames = line.stopNames()
-        //tmp
-        pickedOrigin = "Kelvinbridge"
-        pickedDestination = "Partick"
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

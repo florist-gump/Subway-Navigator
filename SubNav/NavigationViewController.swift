@@ -85,16 +85,13 @@ class NavigationViewController: UIViewController {
         timelineView!.showsHorizontalScrollIndicator = false
         timelineView?.addSubview(timeline!)
         
-        // tmp
-        //initLocationServices()
-        presentPauseScreen()
-        //runTestRun()
-        
+        //presentPauseScreen()
+        initLocationServices()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        currentStop += 1
-        updateWith(currentStop)
+        //currentStop += 1
+        //updateWith(currentStop)
     }
     
     func updateWith(status:Int) {
@@ -296,7 +293,7 @@ class NavigationViewController: UIViewController {
                 }
                 
             } catch {
-                print("error during test run ")
+                print("error during test run")
             }
         })
     }
@@ -314,8 +311,22 @@ extension NavigationViewController: NavigationModelDelegate {
     
     func update(sender: NavigationModel, modelPrediction: Int, movementStatus: Int) {
         NSOperationQueue.mainQueue().addOperationWithBlock {
-            self.ModelPrediction?.text = String(modelPrediction)
-            self.ModelMovementStatus?.text = String(movementStatus)
+            if (modelPrediction) == 0 {
+                self.ModelPrediction?.text = "Stationary"
+                self.ModelPrediction?.textColor = UIColor.blueColor()
+                
+            } else {
+                self.ModelPrediction?.text = "Moving"
+                self.ModelPrediction?.textColor = UIColor.redColor()
+            }
+            if (movementStatus) == 0 {
+                self.ModelMovementStatus?.text = "Stationary"
+                self.ModelMovementStatus?.textColor = UIColor.blueColor()
+            }
+            else {
+                self.ModelMovementStatus?.text = "Moving"
+                self.ModelMovementStatus?.textColor = UIColor.redColor()
+            }
         }
     }
 }
