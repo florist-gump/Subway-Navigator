@@ -19,7 +19,7 @@ class NavigationViewController: UIViewController {
     @IBOutlet weak var timelineView:UIScrollView?
     @IBOutlet weak var stopsLeft:UILabel?
     
-    
+    // for debug view only
     @IBOutlet weak var ModelPrediction:UILabel?
     @IBOutlet weak var ModelMovementStatus:UILabel?
     
@@ -52,7 +52,8 @@ class NavigationViewController: UIViewController {
     
     var motionManager: CMMotionManager?
     var locationManager:CLLocationManager!
-
+    
+    // for pause screen
     var darkBlurView: UIVisualEffectView!
     
     override func viewDidLoad() {
@@ -178,8 +179,7 @@ class NavigationViewController: UIViewController {
         let navigationModel = NavigationModel(dt: dt)
         navigationModel.delegate = self
         
-        motionManager?.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: { (data: CMDeviceMotion?, error: NSError?) in
-            navigationModel.update([data!.userAcceleration.x,data!.userAcceleration.y,data!.userAcceleration.z,data!.rotationRate.x,data!.rotationRate.y,data!.rotationRate.z])
+        motionManager?.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: { (data: CMDeviceMotion?, error: NSError?) in            navigationModel.update([data!.userAcceleration.x,data!.userAcceleration.y,data!.userAcceleration.z,data!.rotationRate.x,data!.rotationRate.y,data!.rotationRate.z])
         })
     }
     
@@ -263,6 +263,7 @@ class NavigationViewController: UIViewController {
     }
     
     func runTestRun() {
+        // import measurements from the export.csv file and run classifier
         print("testRun")
         let dt = 0.01
         

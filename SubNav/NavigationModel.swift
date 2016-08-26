@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol NavigationModelDelegate: class {
+protocol NavigationModelDelegate: class { // to inform any "listerns"/delegates about model changes
     func stopDetected(sender: NavigationModel)
     func update(sender: NavigationModel, modelPrediction:Int, movementStatus:Int)
 }

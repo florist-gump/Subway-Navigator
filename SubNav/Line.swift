@@ -50,7 +50,7 @@ class Line {
         if indexOrigin < indexDest {
             let stopSelection = stops![indexOrigin...indexDest]
             listOfStops = Array(stopSelection)
-        } else {
+        } else { // glasgow subway is organized in a circle so indexOrigin > indexDest case has to be handled
             i = indexOrigin
             var currentStop = stops[i]
             while currentStop.name != stops[indexDest].name {

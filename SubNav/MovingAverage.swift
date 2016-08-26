@@ -35,6 +35,7 @@ class MovingAverage {
     }
     
     func addFeatureVector(values: Array<Double>) -> Array<Double> {
+        // return the average after a feature vector is added
         let pos = Int(fmodf(Float(valueCount), Float(windowSize)))
         if pos >= rawValues.count {
             rawValues.append(values)

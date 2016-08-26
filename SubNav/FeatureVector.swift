@@ -26,6 +26,7 @@ class FeatureVector {
     }
     
     func getTimeLine() -> Array<Double> {
+        // return the feature vector as a flattened array
         return Array(timeLine.reverse().flatten())
     }
 }
