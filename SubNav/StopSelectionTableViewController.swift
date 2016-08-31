@@ -23,8 +23,8 @@ class StopSelectionTableViewController: UITableViewController {
             presentViewController(stopAlert, animated: true, completion: nil)
         } else {
             //switch for debug or regular navigation view
-            //performSegueWithIdentifier("Navigate", sender: nil)
-            performSegueWithIdentifier("DebugNavigate", sender: nil)
+            performSegueWithIdentifier("Navigate", sender: nil)
+            //performSegueWithIdentifier("DebugNavigate", sender: nil)
         }
     }
     

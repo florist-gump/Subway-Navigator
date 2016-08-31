@@ -86,8 +86,8 @@ class NavigationViewController: UIViewController {
         timelineView!.showsHorizontalScrollIndicator = false
         timelineView?.addSubview(timeline!)
         
-        //presentPauseScreen()
-        initLocationServices()
+        presentPauseScreen()
+        //initLocationServices()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
