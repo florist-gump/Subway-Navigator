@@ -1,0 +1,1522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00967A34C0778275E41D1CBA32E398F8 /* UILabel+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E8CDA53A2C9EC1A60C49AFF6C0BFD66 /* UILabel+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01C6F32401BCBE9FF9B3C095B031D92B /* UIColor+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0F97BB6AC18A786C75FDC44360E56A /* UIColor+Chameleon.m */; };
+		097AE4014349090D14C6C5637F8A3464 /* ChameleonConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 2901FAB9352D19D90B52267C91D83E65 /* ChameleonConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0DC8FB298B3A32592DAAE0BF4B34D395 /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0E685CC7B402923F8B4942E51711D8 /* CSV.swift */; };
+		1236ECB96A915EC617957A42838CDD7B /* ChameleonConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DE8B7D6F76E987D266426A006CF0D3 /* ChameleonConstants.m */; };
+		15E113F19F49C0C0472242BD6E849A1B /* UIImage+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B60E059E7D5885BFDF19DA16D539B7 /* UIImage+ChameleonPrivate.m */; };
+		1736C9EB167121B7B4033DB3304686AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821945910E2D2D1653B86A6AC7EF80C7 /* CoreGraphics.framework */; };
+		24E7D20FD204AF7AACB30A3B7C16388C /* NSArray+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6924FFCACE9D9F03384D626C0926B5 /* NSArray+Chameleon.m */; };
+		2EB1DDF7C82E58127FD3180B625F937A /* Pods-SubNavTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BD812EC6389E30EA4E053631AEA02F2 /* Pods-SubNavTests-dummy.m */; };
+		2F7A30B2274733A06A01B5F447606674 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC9C916E790EA9640DC29543FE62388 /* PickerView.swift */; };
+		3E5D38D923926DDF6D6EC22FE35A5D92 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6A73974E9D5639340C15E196250587 /* Foundation.framework */; };
+		4194C2418EEF62E01342A820B5EF9C71 /* UIColor+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 568E8412501F7A24453A91896341B901 /* UIColor+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4852B5D133DBF9608FD710D777C03BBE /* String+Lines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C769A49BD1B57CDDD59D01E8312E94 /* String+Lines.swift */; };
+		4A0E71E9E2BD86AA8CB6077A95CDC034 /* ChameleonEnums.h in Headers */ = {isa = PBXBuildFile; fileRef = 40B276A3DEE7E5F7069205313ADBD5D8 /* ChameleonEnums.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4C6CEBA607BEA909A9CCB80C6AB6AE88 /* UINavigationController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = DB0221C0A01B31C9FF5DB8549F3DE763 /* UINavigationController+Chameleon.m */; };
+		5177B3B95985D0A2CF8376A6FD4488C2 /* UIViewController+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BBA06D470E47DA8FBE319E09C538C /* UIViewController+Chameleon.m */; };
+		549473D1031D2EDDC7D71AFEA3F58FE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6A73974E9D5639340C15E196250587 /* Foundation.framework */; };
+		5CCC419BB423F48192FBA3C7D7D6B7DA /* ChameleonMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = EE51FBBD8920BC5B6FFFDFC4945C6B65 /* ChameleonMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F349CB3AD7D7E6C9C7060A600857EEA /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76CAA092A6269350E05A8E02466115E /* Description.swift */; };
+		6285AE0A5D0023BED1A839C9DDC93F70 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190760A62028BF7E616D03CD04936B5F /* Parser.swift */; };
+		64C89D98B9D3B9C57971E1E137233980 /* ChameleonFramework-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 25F41708ED94A007B5AD95FD5908775A /* ChameleonFramework-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D02C5748536125E2A5C9FF03665D9E6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 195BC713D9BF2BAB7EB17482D950FFF8 /* Accelerate.framework */; };
+		6F55D813D97F869570C08D00A6F4AC7B /* MLPNeuralNet-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 53EEA48D899FA8BCDC2353D29F06EF39 /* MLPNeuralNet-dummy.m */; };
+		6FFDAD2F800BC27FCF40E92B71D88CF3 /* UINavigationController+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F5069E6A3D7A4D61C66C1CBBEBD988D /* UINavigationController+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		738E4E0555CE3C233C400AE87B9887E4 /* Chameleon_.h in Headers */ = {isa = PBXBuildFile; fileRef = E84ABAFF851452F41E18A8894898576A /* Chameleon_.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7511A9E197BB387092022FF39B421E12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6A73974E9D5639340C15E196250587 /* Foundation.framework */; };
+		7708E07C85FF6C2BC400C15CCDB7EB1C /* UIImage+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 91E69DF22601BEA24BFF5C2C3EAB251A /* UIImage+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7CC200FFF8123EF84175D947DA065ACA /* SwiftCSV-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 558F0B6568F7B3DC4597E3F363D00C49 /* SwiftCSV-dummy.m */; };
+		7EC9330EBDF327051B12E42AE8741B6E /* Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 98A48B528E5714FB2E6397EF35977867 /* Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81840B35F7DD7F3CA4592E2B6893B933 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 767314F53A0138E7FC180A3CB914559B /* QuartzCore.framework */; };
+		81C33B3845D7F4DE1248BA383FA7D220 /* PickerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9E2AFC523913A3CC9E801ABC8609B0CF /* PickerView.bundle */; };
+		86E6E3CF13C3A8C99665407A23411F1D /* Pods-SubNavTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C6BCEFDBEE542BE09747DF7D8D5D2C0A /* Pods-SubNavTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8AE1A4E65892565E78D5EFDEBC70DFF6 /* MLPNeuralNet.h in Headers */ = {isa = PBXBuildFile; fileRef = BCC66D959BC0D381B07F8ECDCB3A232F /* MLPNeuralNet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		996F369062310E5DBE84107488329660 /* MLPNeuralNet-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CBC73668CF0AD56B2859E37D1526DA4 /* MLPNeuralNet-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B365A3A01EF135485F43412F83C7C65 /* Chameleon_.m in Sources */ = {isa = PBXBuildFile; fileRef = 982EF9BECC83B11D0DB39AF72BE98D7A /* Chameleon_.m */; };
+		9B3EEA3CFA303B0D28A8034C16BFDA15 /* UILabel+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2901AE47DB08FF9300B83A863205229B /* UILabel+Chameleon.m */; };
+		A2AC9FD0F42F638C48E72F88E8BC4C80 /* ChameleonShorthand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92ED673C35CFCD922A2ECF1EE37FB670 /* ChameleonShorthand.swift */; };
+		A46A3EAB602FB4840C5AB8493F86AE4F /* UIButton+Chameleon.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C76D819C886A15FF097D175297298A /* UIButton+Chameleon.m */; };
+		A529B9D472B6EBBB33C37BF582AFFBE5 /* Pods-SubNav-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E42BF48329C51B66ED2567B0EE3819B5 /* Pods-SubNav-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A7F47F96F8E0C3084A1EC2211F8A6FE6 /* ParserHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849D89EC5284485D95A1FFA09057C6D /* ParserHelpers.swift */; };
+		AF9FDFE994A206795619E469B68C614E /* UIViewController+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BF06B716232F168063E4BF47363DE63 /* UIViewController+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B016882BFA2C4534A7E4157A5B99933B /* SwiftCSV-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E8B5485C008567539B0CA39E705835BD /* SwiftCSV-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B71968ADC80D9CA74C57959B609E46F6 /* UIAppearance+Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 897AE272D709103166D752C7752716F7 /* UIAppearance+Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C08DCA5180F1A15542694844C66B0EFB /* UIView+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = F2806DE79C245B273C700F583AEEEF47 /* UIView+ChameleonPrivate.m */; };
+		C8F191C4FA3530AAEBAD2DDE2604DCF2 /* UIButton+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 6110E3E356BF0627D411C3537E6BF287 /* UIButton+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFB8C96C7D3F7331E409D296466B923A /* UIColor+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CF1F8F51222679FDE4337E78809AE7 /* UIColor+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2B61A78124FCB785E11A98BDD0471BC /* UIAppearance+Swift.m in Sources */ = {isa = PBXBuildFile; fileRef = 119063BA3BAED0BAC8140EB255BFCF64 /* UIAppearance+Swift.m */; };
+		D36BC9B0C925A5244E16EE70E4809EE6 /* UIView+ChameleonPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EA74AF0FE67C46596F420E28E62CCC /* UIView+ChameleonPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DCC3112D865A173F37A7CD7094E979AD /* PickerView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC58FA26A92EE919D08641C13D7C3C8 /* PickerView-dummy.m */; };
+		DEE775A6A7F24B8EB1704D794A9D0DD8 /* Pods-SubNav-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A1F3B5C4371AAA7DD49C6B1056B5A05D /* Pods-SubNav-dummy.m */; };
+		E0AFA39DA4A01D8A8FE3D4EC76250F46 /* UIColor+ChameleonPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4DA8C8249C96E536A7E3CCD3E4B5689 /* UIColor+ChameleonPrivate.m */; };
+		E0C720836FBA4E75E3E57069219B7107 /* ChameleonFramework-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 258EE7401FC73EC103BD377E7D50937B /* ChameleonFramework-dummy.m */; };
+		E373E1CF3A86EEC54F0D18F842B7D605 /* MLPNeuralNet.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AC72C0B97AED77EEEFBD0B41441BEF /* MLPNeuralNet.m */; };
+		E40E50B03C60D676D66FAD62322C7B62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6A73974E9D5639340C15E196250587 /* Foundation.framework */; };
+		E679E0F3EC9DE3DE0EADC358CD305C4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6A73974E9D5639340C15E196250587 /* Foundation.framework */; };
+		EDE12978B3BB8AD4A68940CB07878C96 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8B559E8C013EC95F16295E90681C2D /* UIKit.framework */; };
+		F7F7B52B16C2EE62D2DE4E670DF4F6F3 /* PickerView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 527156D14D78B2A86080D82C62844297 /* PickerView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD5B0604D82CF56CBD72D3A52244FA3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6A73974E9D5639340C15E196250587 /* Foundation.framework */; };
+		FF4A8EFE1154C1FFD58B48E978298871 /* NSArray+Chameleon.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CE9CC075CAC09AF6F19E73C6450A24B /* NSArray+Chameleon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		15C71DDE6243E7A6DEDF06B6092B98EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4902307598D0017C523ED7DCA9970A40;
+			remoteInfo = MLPNeuralNet;
+		};
+		38D1F710E742BCE5901BCDAE017D07F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A8D732C59F1FC8C15EB96AF2B6C6331;
+			remoteInfo = PickerView;
+		};
+		82C2887795EA1B3F2746BFAEEAF17E39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F347A828DA155FF15F466AA943359F0;
+			remoteInfo = SwiftCSV;
+		};
+		912C9912BAB48B08A428743E65F72429 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5172ACAB7FEA22813859DC97CA0AA16F;
+			remoteInfo = ChameleonFramework;
+		};
+		9F9A6F745F6D03F76FA78FF9C9B43569 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F347A828DA155FF15F466AA943359F0;
+			remoteInfo = SwiftCSV;
+		};
+		C69C612B293A4BC7169B2AA31BA7B80F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 169B629602E3EFEECC747B2D6ECB9C45;
+			remoteInfo = "PickerView-PickerView";
+		};
+		E90E83AEE587AFDC0739B32B638AB84E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A8D732C59F1FC8C15EB96AF2B6C6331;
+			remoteInfo = PickerView;
+		};
+		F199DF062197709EE706FD11A06C3A24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4902307598D0017C523ED7DCA9970A40;
+			remoteInfo = MLPNeuralNet;
+		};
+		F898575EEC19653C70BA5EDDEEDDC667 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5172ACAB7FEA22813859DC97CA0AA16F;
+			remoteInfo = ChameleonFramework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00534FA1B93ED7D02220F313D49C2AF5 /* SwiftCSV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftCSV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05BB505FC1C528DE18AB465AA8650DDA /* Pods_SubNavTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SubNavTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09E4D199BE273E748CB2D94025DB5B9D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A0CFA003DC7FA5A4BC7DDEAC2C9AC74 /* PickerView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PickerView.modulemap; sourceTree = "<group>"; };
+		0B77BD2ED9DECE65D2FACFE31DA8E3BA /* PickerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CA82F9613CF2B6408242A1DF13A15E9 /* Pods-SubNavTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SubNavTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0E8CDA53A2C9EC1A60C49AFF6C0BFD66 /* UILabel+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+Chameleon.h"; path = "Pod/Classes/Objective-C/UILabel+Chameleon.h"; sourceTree = "<group>"; };
+		119063BA3BAED0BAC8140EB255BFCF64 /* UIAppearance+Swift.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAppearance+Swift.m"; path = "Pod/Classes/Objective-C/UIAppearance+Swift.m"; sourceTree = "<group>"; };
+		15A36F895D9279A7D28663C12099A7EA /* Pods-SubNavTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SubNavTests-frameworks.sh"; sourceTree = "<group>"; };
+		176E09FA50B4C3685EC9A78D8908F741 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		190760A62028BF7E616D03CD04936B5F /* Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = SwiftCSV/Parser.swift; sourceTree = "<group>"; };
+		195BC713D9BF2BAB7EB17482D950FFF8 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
+		1C6A73974E9D5639340C15E196250587 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		258EE7401FC73EC103BD377E7D50937B /* ChameleonFramework-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChameleonFramework-dummy.m"; sourceTree = "<group>"; };
+		25F41708ED94A007B5AD95FD5908775A /* ChameleonFramework-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChameleonFramework-umbrella.h"; sourceTree = "<group>"; };
+		2901AE47DB08FF9300B83A863205229B /* UILabel+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UILabel+Chameleon.m"; path = "Pod/Classes/Objective-C/UILabel+Chameleon.m"; sourceTree = "<group>"; };
+		2901FAB9352D19D90B52267C91D83E65 /* ChameleonConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonConstants.h; path = "Pod/Classes/Objective-C/ChameleonConstants.h"; sourceTree = "<group>"; };
+		29099ABFC0808FCB17A1CD430F167051 /* ChameleonFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChameleonFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		291BBA06D470E47DA8FBE319E09C538C /* UIViewController+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Chameleon.m"; path = "Pod/Classes/Objective-C/UIViewController+Chameleon.m"; sourceTree = "<group>"; };
+		2B768B19A961927DA403CDA76DC5E6F7 /* MLPNeuralNet-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MLPNeuralNet-prefix.pch"; sourceTree = "<group>"; };
+		2E2815675C2C58CB67703E37FC8C4DB8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E6924FFCACE9D9F03384D626C0926B5 /* NSArray+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Chameleon.m"; path = "Pod/Classes/Objective-C/NSArray+Chameleon.m"; sourceTree = "<group>"; };
+		3162E0824476BCCCF26B62A7CA94BA65 /* PickerView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PickerView.xcconfig; sourceTree = "<group>"; };
+		32B7FD835EF2E9F48B44D06524D56A01 /* MLPNeuralNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MLPNeuralNet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3849D89EC5284485D95A1FFA09057C6D /* ParserHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParserHelpers.swift; path = SwiftCSV/ParserHelpers.swift; sourceTree = "<group>"; };
+		39DC3680A782386C70E0DDF180EB4BFC /* Pods-SubNav.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SubNav.release.xcconfig"; sourceTree = "<group>"; };
+		3CBC73668CF0AD56B2859E37D1526DA4 /* MLPNeuralNet-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MLPNeuralNet-umbrella.h"; sourceTree = "<group>"; };
+		40125EE4BE133231F91A4BCF0EDEFA85 /* Pods-SubNav-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SubNav-acknowledgements.plist"; sourceTree = "<group>"; };
+		40B276A3DEE7E5F7069205313ADBD5D8 /* ChameleonEnums.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonEnums.h; path = "Pod/Classes/Objective-C/ChameleonEnums.h"; sourceTree = "<group>"; };
+		40C769A49BD1B57CDDD59D01E8312E94 /* String+Lines.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Lines.swift"; path = "SwiftCSV/String+Lines.swift"; sourceTree = "<group>"; };
+		4A0F97BB6AC18A786C75FDC44360E56A /* UIColor+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Chameleon.m"; path = "Pod/Classes/Objective-C/UIColor+Chameleon.m"; sourceTree = "<group>"; };
+		4A9DFCD28F50B91F791D6E0D61B47402 /* Pods_SubNav.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SubNav.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		527156D14D78B2A86080D82C62844297 /* PickerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PickerView-umbrella.h"; sourceTree = "<group>"; };
+		53EEA48D899FA8BCDC2353D29F06EF39 /* MLPNeuralNet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MLPNeuralNet-dummy.m"; sourceTree = "<group>"; };
+		554958F51328A5BF3782E35AA4A4DEA6 /* Pods-SubNavTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SubNavTests.modulemap"; sourceTree = "<group>"; };
+		558F0B6568F7B3DC4597E3F363D00C49 /* SwiftCSV-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftCSV-dummy.m"; sourceTree = "<group>"; };
+		568E8412501F7A24453A91896341B901 /* UIColor+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIColor+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		5A1306809D9FAB4FE5475A5B3A8D066B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CF6E94374D3195B14CFCCD48C7C896E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6110E3E356BF0627D411C3537E6BF287 /* UIButton+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+Chameleon.h"; path = "Pod/Classes/Objective-C/UIButton+Chameleon.h"; sourceTree = "<group>"; };
+		64A9A5175A8DCA4545330680AA15D4C9 /* ChameleonFramework.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChameleonFramework.xcconfig; sourceTree = "<group>"; };
+		6708A96A2BFBF0C1AEC1A11FC9D28D16 /* Pods-SubNav-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SubNav-resources.sh"; sourceTree = "<group>"; };
+		6A2C2A927CCF536FB3DE1261F969BEC5 /* SwiftCSV.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftCSV.modulemap; sourceTree = "<group>"; };
+		6CE9CC075CAC09AF6F19E73C6450A24B /* NSArray+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+Chameleon.h"; path = "Pod/Classes/Objective-C/NSArray+Chameleon.h"; sourceTree = "<group>"; };
+		6D4CA14C9CBA6068C4E8F865F5EE1D07 /* MLPNeuralNet.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MLPNeuralNet.xcconfig; sourceTree = "<group>"; };
+		6FC9C916E790EA9640DC29543FE62388 /* PickerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PickerView.swift; path = Pod/Classes/PickerView.swift; sourceTree = "<group>"; };
+		734DAA7C9BA89DE8B53560EB59E3EC8B /* Pods-SubNavTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SubNavTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		767314F53A0138E7FC180A3CB914559B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		76989EEAA74A41797DF9A67D423E378D /* Pods-SubNavTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SubNavTests.release.xcconfig"; sourceTree = "<group>"; };
+		79EB53C2EB3D511B1ACE84845703DD02 /* Pods-SubNav-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SubNav-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7BD812EC6389E30EA4E053631AEA02F2 /* Pods-SubNavTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SubNavTests-dummy.m"; sourceTree = "<group>"; };
+		7F5069E6A3D7A4D61C66C1CBBEBD988D /* UINavigationController+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+Chameleon.h"; path = "Pod/Classes/Objective-C/UINavigationController+Chameleon.h"; sourceTree = "<group>"; };
+		821945910E2D2D1653B86A6AC7EF80C7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		84DE8B7D6F76E987D266426A006CF0D3 /* ChameleonConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ChameleonConstants.m; path = "Pod/Classes/Objective-C/ChameleonConstants.m"; sourceTree = "<group>"; };
+		897AE272D709103166D752C7752716F7 /* UIAppearance+Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAppearance+Swift.h"; path = "Pod/Classes/Objective-C/UIAppearance+Swift.h"; sourceTree = "<group>"; };
+		89AC72C0B97AED77EEEFBD0B41441BEF /* MLPNeuralNet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLPNeuralNet.m; path = MLPNeuralNet/MLPNeuralNet.m; sourceTree = "<group>"; };
+		91E69DF22601BEA24BFF5C2C3EAB251A /* UIImage+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIImage+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		92ED673C35CFCD922A2ECF1EE37FB670 /* ChameleonShorthand.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChameleonShorthand.swift; path = Pod/Classes/Swift/ChameleonShorthand.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		97E646F0C1531A6A23B04958935489CD /* Pods-SubNavTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SubNavTests-resources.sh"; sourceTree = "<group>"; };
+		982EF9BECC83B11D0DB39AF72BE98D7A /* Chameleon_.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Chameleon_.m; path = "Pod/Classes/Objective-C/Chameleon_.m"; sourceTree = "<group>"; };
+		98A48B528E5714FB2E6397EF35977867 /* Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Chameleon.h; path = "Pod/Classes/Objective-C/Chameleon.h"; sourceTree = "<group>"; };
+		99A2AB1F4CF5ADB410D4728005C459BF /* ResourceBundle-PickerView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-PickerView-Info.plist"; sourceTree = "<group>"; };
+		9BF06B716232F168063E4BF47363DE63 /* UIViewController+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Chameleon.h"; path = "Pod/Classes/Objective-C/UIViewController+Chameleon.h"; sourceTree = "<group>"; };
+		9BF90072253DF990222003A69DF25C1A /* Pods-SubNav.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SubNav.modulemap"; sourceTree = "<group>"; };
+		9E2AFC523913A3CC9E801ABC8609B0CF /* PickerView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PickerView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1EA74AF0FE67C46596F420E28E62CCC /* UIView+ChameleonPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+ChameleonPrivate.h"; path = "Pod/Classes/Objective-C/UIView+ChameleonPrivate.h"; sourceTree = "<group>"; };
+		A1F3B5C4371AAA7DD49C6B1056B5A05D /* Pods-SubNav-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SubNav-dummy.m"; sourceTree = "<group>"; };
+		A33BF85AD15C9DFF760D4060AB880DFC /* MLPNeuralNet.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MLPNeuralNet.modulemap; sourceTree = "<group>"; };
+		A4DA8C8249C96E536A7E3CCD3E4B5689 /* UIColor+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIColor+ChameleonPrivate.m"; sourceTree = "<group>"; };
+		A85B97C1EE202004B0C3C533D66F3AE7 /* Pods-SubNavTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SubNavTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AD150DB6934946881D66C87E07E905F6 /* ChameleonFramework-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChameleonFramework-prefix.pch"; sourceTree = "<group>"; };
+		AD2AD92CCF397EA649130BD210BF6991 /* Pods-SubNav-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SubNav-frameworks.sh"; sourceTree = "<group>"; };
+		ADC58FA26A92EE919D08641C13D7C3C8 /* PickerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PickerView-dummy.m"; sourceTree = "<group>"; };
+		AF8B559E8C013EC95F16295E90681C2D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B9C76D819C886A15FF097D175297298A /* UIButton+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+Chameleon.m"; path = "Pod/Classes/Objective-C/UIButton+Chameleon.m"; sourceTree = "<group>"; };
+		BB0E685CC7B402923F8B4942E51711D8 /* CSV.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CSV.swift; path = SwiftCSV/CSV.swift; sourceTree = "<group>"; };
+		BCC66D959BC0D381B07F8ECDCB3A232F /* MLPNeuralNet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLPNeuralNet.h; path = MLPNeuralNet/MLPNeuralNet.h; sourceTree = "<group>"; };
+		BFA5BEBD0DEA267621623E50E539B331 /* ChameleonFramework.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ChameleonFramework.modulemap; sourceTree = "<group>"; };
+		C1CF1F8F51222679FDE4337E78809AE7 /* UIColor+Chameleon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+Chameleon.h"; path = "Pod/Classes/Objective-C/UIColor+Chameleon.h"; sourceTree = "<group>"; };
+		C28D2FDAD3F8D2E15CB7D54045ED5006 /* SwiftCSV.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftCSV.xcconfig; sourceTree = "<group>"; };
+		C6BCEFDBEE542BE09747DF7D8D5D2C0A /* Pods-SubNavTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SubNavTests-umbrella.h"; sourceTree = "<group>"; };
+		C7132E27F562A7E893A483008DD7B972 /* Pods-SubNav.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SubNav.debug.xcconfig"; sourceTree = "<group>"; };
+		C76CAA092A6269350E05A8E02466115E /* Description.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Description.swift; path = SwiftCSV/Description.swift; sourceTree = "<group>"; };
+		D7B013F9BB8F4792039248A430924178 /* PickerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PickerView-prefix.pch"; sourceTree = "<group>"; };
+		DB0221C0A01B31C9FF5DB8549F3DE763 /* UINavigationController+Chameleon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+Chameleon.m"; path = "Pod/Classes/Objective-C/UINavigationController+Chameleon.m"; sourceTree = "<group>"; };
+		DB6D302FFFAE33FE3F8F1F5E81210430 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E42BF48329C51B66ED2567B0EE3819B5 /* Pods-SubNav-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SubNav-umbrella.h"; sourceTree = "<group>"; };
+		E7DAA91FF916D75D67CD55BDFF3015E1 /* SwiftCSV-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftCSV-prefix.pch"; sourceTree = "<group>"; };
+		E84ABAFF851452F41E18A8894898576A /* Chameleon_.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Chameleon_.h; path = "Pod/Classes/Objective-C/Chameleon_.h"; sourceTree = "<group>"; };
+		E8B5485C008567539B0CA39E705835BD /* SwiftCSV-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftCSV-umbrella.h"; sourceTree = "<group>"; };
+		EE51FBBD8920BC5B6FFFDFC4945C6B65 /* ChameleonMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChameleonMacros.h; path = "Pod/Classes/Objective-C/ChameleonMacros.h"; sourceTree = "<group>"; };
+		F2806DE79C245B273C700F583AEEEF47 /* UIView+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIView+ChameleonPrivate.m"; sourceTree = "<group>"; };
+		F8B60E059E7D5885BFDF19DA16D539B7 /* UIImage+ChameleonPrivate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ChameleonPrivate.m"; path = "Pod/Classes/Objective-C/UIImage+ChameleonPrivate.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		428E19A6F0F9405685E670074145ADDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D02C5748536125E2A5C9FF03665D9E6 /* Accelerate.framework in Frameworks */,
+				7511A9E197BB387092022FF39B421E12 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C4C077CC57E5CFC1C8BA2D9391995C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				549473D1031D2EDDC7D71AFEA3F58FE3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E3EF160C0D6AA3588AC18902EA6DFD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF3678C7276111B034387F95F1376F62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD5B0604D82CF56CBD72D3A52244FA3A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C828BDB419E45C8D0AA6966A4D46DCB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E679E0F3EC9DE3DE0EADC358CD305C4E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDDBC2A60374B45F956BD80A8DDAB5B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E5D38D923926DDF6D6EC22FE35A5D92 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC1A73E30C8322A70D5DCD63B04CAE84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1736C9EB167121B7B4033DB3304686AE /* CoreGraphics.framework in Frameworks */,
+				E40E50B03C60D676D66FAD62322C7B62 /* Foundation.framework in Frameworks */,
+				81840B35F7DD7F3CA4592E2B6893B933 /* QuartzCore.framework in Frameworks */,
+				EDE12978B3BB8AD4A68940CB07878C96 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0DD17CF7CBE5877A35616B265BF5CF9A /* ChameleonFramework */ = {
+			isa = PBXGroup;
+			children = (
+				BB2491B6C80EED7EEC81D3AE378CCE03 /* Default */,
+				272AE8CD2CAB6B263BDA4E2B697EF4B3 /* Support Files */,
+				29E844227B68452556FB0FE9091D155A /* Swift */,
+			);
+			path = ChameleonFramework;
+			sourceTree = "<group>";
+		};
+		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				459F91A28B5567A7EED5B416B6D0A9DE /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		272AE8CD2CAB6B263BDA4E2B697EF4B3 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BFA5BEBD0DEA267621623E50E539B331 /* ChameleonFramework.modulemap */,
+				64A9A5175A8DCA4545330680AA15D4C9 /* ChameleonFramework.xcconfig */,
+				258EE7401FC73EC103BD377E7D50937B /* ChameleonFramework-dummy.m */,
+				AD150DB6934946881D66C87E07E905F6 /* ChameleonFramework-prefix.pch */,
+				25F41708ED94A007B5AD95FD5908775A /* ChameleonFramework-umbrella.h */,
+				176E09FA50B4C3685EC9A78D8908F741 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ChameleonFramework";
+			sourceTree = "<group>";
+		};
+		29E844227B68452556FB0FE9091D155A /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				92ED673C35CFCD922A2ECF1EE37FB670 /* ChameleonShorthand.swift */,
+			);
+			name = Swift;
+			sourceTree = "<group>";
+		};
+		459F91A28B5567A7EED5B416B6D0A9DE /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				195BC713D9BF2BAB7EB17482D950FFF8 /* Accelerate.framework */,
+				821945910E2D2D1653B86A6AC7EF80C7 /* CoreGraphics.framework */,
+				1C6A73974E9D5639340C15E196250587 /* Foundation.framework */,
+				767314F53A0138E7FC180A3CB914559B /* QuartzCore.framework */,
+				AF8B559E8C013EC95F16295E90681C2D /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		488FC8C5B6BEBC51E6BA98BE37D6F96E /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EDCCDDD5E40F2392D6D7884EC7A3CA22 /* Pods-SubNav */,
+				E79A14112B83197A4D4D0AB20DAF96F3 /* Pods-SubNavTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		51BED5D88AF20B98F7E5518A9D2A6C97 /* MLPNeuralNet */ = {
+			isa = PBXGroup;
+			children = (
+				BCC66D959BC0D381B07F8ECDCB3A232F /* MLPNeuralNet.h */,
+				89AC72C0B97AED77EEEFBD0B41441BEF /* MLPNeuralNet.m */,
+				E63B8C01C471D8BB328F56DC0FA95461 /* Support Files */,
+			);
+			path = MLPNeuralNet;
+			sourceTree = "<group>";
+		};
+		5268B0D9753D7DEF2F50ED7B02B84C5A /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				6FC9C916E790EA9640DC29543FE62388 /* PickerView.swift */,
+				6D0C238F8A1A28F920EC84EF1476661F /* Support Files */,
+			);
+			path = PickerView;
+			sourceTree = "<group>";
+		};
+		59C713F425123F77AB4C4685789A41F4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5CF6E94374D3195B14CFCCD48C7C896E /* Info.plist */,
+				6A2C2A927CCF536FB3DE1261F969BEC5 /* SwiftCSV.modulemap */,
+				C28D2FDAD3F8D2E15CB7D54045ED5006 /* SwiftCSV.xcconfig */,
+				558F0B6568F7B3DC4597E3F363D00C49 /* SwiftCSV-dummy.m */,
+				E7DAA91FF916D75D67CD55BDFF3015E1 /* SwiftCSV-prefix.pch */,
+				E8B5485C008567539B0CA39E705835BD /* SwiftCSV-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftCSV";
+			sourceTree = "<group>";
+		};
+		6D0C238F8A1A28F920EC84EF1476661F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB6D302FFFAE33FE3F8F1F5E81210430 /* Info.plist */,
+				0A0CFA003DC7FA5A4BC7DDEAC2C9AC74 /* PickerView.modulemap */,
+				3162E0824476BCCCF26B62A7CA94BA65 /* PickerView.xcconfig */,
+				ADC58FA26A92EE919D08641C13D7C3C8 /* PickerView-dummy.m */,
+				D7B013F9BB8F4792039248A430924178 /* PickerView-prefix.pch */,
+				527156D14D78B2A86080D82C62844297 /* PickerView-umbrella.h */,
+				99A2AB1F4CF5ADB410D4728005C459BF /* ResourceBundle-PickerView-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PickerView";
+			sourceTree = "<group>";
+		};
+		755F7A352AF131FB0B1243F2FF967E3C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29099ABFC0808FCB17A1CD430F167051 /* ChameleonFramework.framework */,
+				32B7FD835EF2E9F48B44D06524D56A01 /* MLPNeuralNet.framework */,
+				9E2AFC523913A3CC9E801ABC8609B0CF /* PickerView.bundle */,
+				0B77BD2ED9DECE65D2FACFE31DA8E3BA /* PickerView.framework */,
+				4A9DFCD28F50B91F791D6E0D61B47402 /* Pods_SubNav.framework */,
+				05BB505FC1C528DE18AB465AA8650DDA /* Pods_SubNavTests.framework */,
+				00534FA1B93ED7D02220F313D49C2AF5 /* SwiftCSV.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
+				ED3F0AE091D85CFD4B7A98C535DBC606 /* Pods */,
+				755F7A352AF131FB0B1243F2FF967E3C /* Products */,
+				488FC8C5B6BEBC51E6BA98BE37D6F96E /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		92DB1EA690BF7588BA3A420C18531089 /* SwiftCSV */ = {
+			isa = PBXGroup;
+			children = (
+				BB0E685CC7B402923F8B4942E51711D8 /* CSV.swift */,
+				C76CAA092A6269350E05A8E02466115E /* Description.swift */,
+				190760A62028BF7E616D03CD04936B5F /* Parser.swift */,
+				3849D89EC5284485D95A1FFA09057C6D /* ParserHelpers.swift */,
+				40C769A49BD1B57CDDD59D01E8312E94 /* String+Lines.swift */,
+				59C713F425123F77AB4C4685789A41F4 /* Support Files */,
+			);
+			path = SwiftCSV;
+			sourceTree = "<group>";
+		};
+		BB2491B6C80EED7EEC81D3AE378CCE03 /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				98A48B528E5714FB2E6397EF35977867 /* Chameleon.h */,
+				E84ABAFF851452F41E18A8894898576A /* Chameleon_.h */,
+				982EF9BECC83B11D0DB39AF72BE98D7A /* Chameleon_.m */,
+				2901FAB9352D19D90B52267C91D83E65 /* ChameleonConstants.h */,
+				84DE8B7D6F76E987D266426A006CF0D3 /* ChameleonConstants.m */,
+				40B276A3DEE7E5F7069205313ADBD5D8 /* ChameleonEnums.h */,
+				EE51FBBD8920BC5B6FFFDFC4945C6B65 /* ChameleonMacros.h */,
+				6CE9CC075CAC09AF6F19E73C6450A24B /* NSArray+Chameleon.h */,
+				2E6924FFCACE9D9F03384D626C0926B5 /* NSArray+Chameleon.m */,
+				897AE272D709103166D752C7752716F7 /* UIAppearance+Swift.h */,
+				119063BA3BAED0BAC8140EB255BFCF64 /* UIAppearance+Swift.m */,
+				6110E3E356BF0627D411C3537E6BF287 /* UIButton+Chameleon.h */,
+				B9C76D819C886A15FF097D175297298A /* UIButton+Chameleon.m */,
+				C1CF1F8F51222679FDE4337E78809AE7 /* UIColor+Chameleon.h */,
+				4A0F97BB6AC18A786C75FDC44360E56A /* UIColor+Chameleon.m */,
+				568E8412501F7A24453A91896341B901 /* UIColor+ChameleonPrivate.h */,
+				A4DA8C8249C96E536A7E3CCD3E4B5689 /* UIColor+ChameleonPrivate.m */,
+				91E69DF22601BEA24BFF5C2C3EAB251A /* UIImage+ChameleonPrivate.h */,
+				F8B60E059E7D5885BFDF19DA16D539B7 /* UIImage+ChameleonPrivate.m */,
+				0E8CDA53A2C9EC1A60C49AFF6C0BFD66 /* UILabel+Chameleon.h */,
+				2901AE47DB08FF9300B83A863205229B /* UILabel+Chameleon.m */,
+				7F5069E6A3D7A4D61C66C1CBBEBD988D /* UINavigationController+Chameleon.h */,
+				DB0221C0A01B31C9FF5DB8549F3DE763 /* UINavigationController+Chameleon.m */,
+				A1EA74AF0FE67C46596F420E28E62CCC /* UIView+ChameleonPrivate.h */,
+				F2806DE79C245B273C700F583AEEEF47 /* UIView+ChameleonPrivate.m */,
+				9BF06B716232F168063E4BF47363DE63 /* UIViewController+Chameleon.h */,
+				291BBA06D470E47DA8FBE319E09C538C /* UIViewController+Chameleon.m */,
+			);
+			name = Default;
+			sourceTree = "<group>";
+		};
+		E63B8C01C471D8BB328F56DC0FA95461 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2E2815675C2C58CB67703E37FC8C4DB8 /* Info.plist */,
+				A33BF85AD15C9DFF760D4060AB880DFC /* MLPNeuralNet.modulemap */,
+				6D4CA14C9CBA6068C4E8F865F5EE1D07 /* MLPNeuralNet.xcconfig */,
+				53EEA48D899FA8BCDC2353D29F06EF39 /* MLPNeuralNet-dummy.m */,
+				2B768B19A961927DA403CDA76DC5E6F7 /* MLPNeuralNet-prefix.pch */,
+				3CBC73668CF0AD56B2859E37D1526DA4 /* MLPNeuralNet-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MLPNeuralNet";
+			sourceTree = "<group>";
+		};
+		E79A14112B83197A4D4D0AB20DAF96F3 /* Pods-SubNavTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A1306809D9FAB4FE5475A5B3A8D066B /* Info.plist */,
+				554958F51328A5BF3782E35AA4A4DEA6 /* Pods-SubNavTests.modulemap */,
+				A85B97C1EE202004B0C3C533D66F3AE7 /* Pods-SubNavTests-acknowledgements.markdown */,
+				734DAA7C9BA89DE8B53560EB59E3EC8B /* Pods-SubNavTests-acknowledgements.plist */,
+				7BD812EC6389E30EA4E053631AEA02F2 /* Pods-SubNavTests-dummy.m */,
+				15A36F895D9279A7D28663C12099A7EA /* Pods-SubNavTests-frameworks.sh */,
+				97E646F0C1531A6A23B04958935489CD /* Pods-SubNavTests-resources.sh */,
+				C6BCEFDBEE542BE09747DF7D8D5D2C0A /* Pods-SubNavTests-umbrella.h */,
+				0CA82F9613CF2B6408242A1DF13A15E9 /* Pods-SubNavTests.debug.xcconfig */,
+				76989EEAA74A41797DF9A67D423E378D /* Pods-SubNavTests.release.xcconfig */,
+			);
+			name = "Pods-SubNavTests";
+			path = "Target Support Files/Pods-SubNavTests";
+			sourceTree = "<group>";
+		};
+		ED3F0AE091D85CFD4B7A98C535DBC606 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0DD17CF7CBE5877A35616B265BF5CF9A /* ChameleonFramework */,
+				51BED5D88AF20B98F7E5518A9D2A6C97 /* MLPNeuralNet */,
+				5268B0D9753D7DEF2F50ED7B02B84C5A /* PickerView */,
+				92DB1EA690BF7588BA3A420C18531089 /* SwiftCSV */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EDCCDDD5E40F2392D6D7884EC7A3CA22 /* Pods-SubNav */ = {
+			isa = PBXGroup;
+			children = (
+				09E4D199BE273E748CB2D94025DB5B9D /* Info.plist */,
+				9BF90072253DF990222003A69DF25C1A /* Pods-SubNav.modulemap */,
+				79EB53C2EB3D511B1ACE84845703DD02 /* Pods-SubNav-acknowledgements.markdown */,
+				40125EE4BE133231F91A4BCF0EDEFA85 /* Pods-SubNav-acknowledgements.plist */,
+				A1F3B5C4371AAA7DD49C6B1056B5A05D /* Pods-SubNav-dummy.m */,
+				AD2AD92CCF397EA649130BD210BF6991 /* Pods-SubNav-frameworks.sh */,
+				6708A96A2BFBF0C1AEC1A11FC9D28D16 /* Pods-SubNav-resources.sh */,
+				E42BF48329C51B66ED2567B0EE3819B5 /* Pods-SubNav-umbrella.h */,
+				C7132E27F562A7E893A483008DD7B972 /* Pods-SubNav.debug.xcconfig */,
+				39DC3680A782386C70E0DDF180EB4BFC /* Pods-SubNav.release.xcconfig */,
+			);
+			name = "Pods-SubNav";
+			path = "Target Support Files/Pods-SubNav";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1EFC73A1D47D400380467944A5769543 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A529B9D472B6EBBB33C37BF582AFFBE5 /* Pods-SubNav-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59890BED3AF6CEBA2D3BC9A5C45EFBA4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EC9330EBDF327051B12E42AE8741B6E /* Chameleon.h in Headers */,
+				738E4E0555CE3C233C400AE87B9887E4 /* Chameleon_.h in Headers */,
+				097AE4014349090D14C6C5637F8A3464 /* ChameleonConstants.h in Headers */,
+				4A0E71E9E2BD86AA8CB6077A95CDC034 /* ChameleonEnums.h in Headers */,
+				64C89D98B9D3B9C57971E1E137233980 /* ChameleonFramework-umbrella.h in Headers */,
+				5CCC419BB423F48192FBA3C7D7D6B7DA /* ChameleonMacros.h in Headers */,
+				FF4A8EFE1154C1FFD58B48E978298871 /* NSArray+Chameleon.h in Headers */,
+				B71968ADC80D9CA74C57959B609E46F6 /* UIAppearance+Swift.h in Headers */,
+				C8F191C4FA3530AAEBAD2DDE2604DCF2 /* UIButton+Chameleon.h in Headers */,
+				CFB8C96C7D3F7331E409D296466B923A /* UIColor+Chameleon.h in Headers */,
+				4194C2418EEF62E01342A820B5EF9C71 /* UIColor+ChameleonPrivate.h in Headers */,
+				7708E07C85FF6C2BC400C15CCDB7EB1C /* UIImage+ChameleonPrivate.h in Headers */,
+				00967A34C0778275E41D1CBA32E398F8 /* UILabel+Chameleon.h in Headers */,
+				6FFDAD2F800BC27FCF40E92B71D88CF3 /* UINavigationController+Chameleon.h in Headers */,
+				D36BC9B0C925A5244E16EE70E4809EE6 /* UIView+ChameleonPrivate.h in Headers */,
+				AF9FDFE994A206795619E469B68C614E /* UIViewController+Chameleon.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AF8CF4CFF443933453C0BA4E3FC94B1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				996F369062310E5DBE84107488329660 /* MLPNeuralNet-umbrella.h in Headers */,
+				8AE1A4E65892565E78D5EFDEBC70DFF6 /* MLPNeuralNet.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D727EA61EFBF598F64FF6D90124FA16 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B016882BFA2C4534A7E4157A5B99933B /* SwiftCSV-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEABAE41CA71C40B90BFEC7714FD2419 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7F7B52B16C2EE62D2DE4E670DF4F6F3 /* PickerView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FED773C5738BD312286C4159F6EBD76D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86E6E3CF13C3A8C99665407A23411F1D /* Pods-SubNavTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		169B629602E3EFEECC747B2D6ECB9C45 /* PickerView-PickerView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A7B97BE51586F23591FE58D15A45508 /* Build configuration list for PBXNativeTarget "PickerView-PickerView" */;
+			buildPhases = (
+				0BC7CBF8B0BA222C0C43290A2BEFEC16 /* Sources */,
+				8E3EF160C0D6AA3588AC18902EA6DFD0 /* Frameworks */,
+				3847CA6BDCB86FAFCF82F883492F13CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PickerView-PickerView";
+			productName = "PickerView-PickerView";
+			productReference = 9E2AFC523913A3CC9E801ABC8609B0CF /* PickerView.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		3A8D732C59F1FC8C15EB96AF2B6C6331 /* PickerView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D51304277BC8DCEC1FC4EE184F28BA20 /* Build configuration list for PBXNativeTarget "PickerView" */;
+			buildPhases = (
+				F4B6A9CF6F371B611FD23648C3C20D2F /* Sources */,
+				AF3678C7276111B034387F95F1376F62 /* Frameworks */,
+				BD526504DEF1AF0C762534DDD5E5E36C /* Resources */,
+				AEABAE41CA71C40B90BFEC7714FD2419 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AADB18EDABAF9A771A84345E51C76021 /* PBXTargetDependency */,
+			);
+			name = PickerView;
+			productName = PickerView;
+			productReference = 0B77BD2ED9DECE65D2FACFE31DA8E3BA /* PickerView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4902307598D0017C523ED7DCA9970A40 /* MLPNeuralNet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE8F15D81508B398FC6828B6D2FD0383 /* Build configuration list for PBXNativeTarget "MLPNeuralNet" */;
+			buildPhases = (
+				1B66AE85CF43CACA6BE193843A1A5BA9 /* Sources */,
+				428E19A6F0F9405685E670074145ADDE /* Frameworks */,
+				8AF8CF4CFF443933453C0BA4E3FC94B1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MLPNeuralNet;
+			productName = MLPNeuralNet;
+			productReference = 32B7FD835EF2E9F48B44D06524D56A01 /* MLPNeuralNet.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5172ACAB7FEA22813859DC97CA0AA16F /* ChameleonFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48E21BC30675BE10E5FB0192B03002EA /* Build configuration list for PBXNativeTarget "ChameleonFramework" */;
+			buildPhases = (
+				A007306A9F7EAF30B21BFDB4E741628B /* Sources */,
+				FC1A73E30C8322A70D5DCD63B04CAE84 /* Frameworks */,
+				59890BED3AF6CEBA2D3BC9A5C45EFBA4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChameleonFramework;
+			productName = ChameleonFramework;
+			productReference = 29099ABFC0808FCB17A1CD430F167051 /* ChameleonFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		535274CF210D1B09D8483A9596AA763E /* Pods-SubNavTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 247E283304A1C6C4B43585F63B7228F9 /* Build configuration list for PBXNativeTarget "Pods-SubNavTests" */;
+			buildPhases = (
+				D8750753787570B844A5E60E740E09F2 /* Sources */,
+				DDDBC2A60374B45F956BD80A8DDAB5B5 /* Frameworks */,
+				FED773C5738BD312286C4159F6EBD76D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBEB1C1571C6EF5742E348562A39BAD1 /* PBXTargetDependency */,
+				63EAA0821FF0E8085B3295EE33EA2516 /* PBXTargetDependency */,
+				992A3FB2E89BF81658554CB5D89C80D7 /* PBXTargetDependency */,
+				688685BE8720A754A5F7EE99ADE9A7E1 /* PBXTargetDependency */,
+			);
+			name = "Pods-SubNavTests";
+			productName = "Pods-SubNavTests";
+			productReference = 05BB505FC1C528DE18AB465AA8650DDA /* Pods_SubNavTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5F347A828DA155FF15F466AA943359F0 /* SwiftCSV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B68CC7430F3DBA2B9F6D3609DAB600A /* Build configuration list for PBXNativeTarget "SwiftCSV" */;
+			buildPhases = (
+				D42E7B3C94AE5A10BDE4E6B4491A7D06 /* Sources */,
+				7C4C077CC57E5CFC1C8BA2D9391995C6 /* Frameworks */,
+				8D727EA61EFBF598F64FF6D90124FA16 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftCSV;
+			productName = SwiftCSV;
+			productReference = 00534FA1B93ED7D02220F313D49C2AF5 /* SwiftCSV.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		937B51FDD4AC435AD825A288E656B8C7 /* Pods-SubNav */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE12AC79B3BF8646B6D590EB338486C8 /* Build configuration list for PBXNativeTarget "Pods-SubNav" */;
+			buildPhases = (
+				05AD25843A9300FCA4A8A1226F266EE6 /* Sources */,
+				C828BDB419E45C8D0AA6966A4D46DCB6 /* Frameworks */,
+				1EFC73A1D47D400380467944A5769543 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8A241E30FBAA3D1E2C863E3D06C46D91 /* PBXTargetDependency */,
+				8805C2E6D12024EFC46E5B22EA9467D9 /* PBXTargetDependency */,
+				7F622F72FF4D3038C700EC7C8927D849 /* PBXTargetDependency */,
+				0716F01C58F53502AB9E0E01241D7304 /* PBXTargetDependency */,
+			);
+			name = "Pods-SubNav";
+			productName = "Pods-SubNav";
+			productReference = 4A9DFCD28F50B91F791D6E0D61B47402 /* Pods_SubNav.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					169B629602E3EFEECC747B2D6ECB9C45 = {
+						LastSwiftMigration = 0800;
+					};
+					3A8D732C59F1FC8C15EB96AF2B6C6331 = {
+						LastSwiftMigration = 0800;
+					};
+					4902307598D0017C523ED7DCA9970A40 = {
+						LastSwiftMigration = 0800;
+					};
+					5172ACAB7FEA22813859DC97CA0AA16F = {
+						LastSwiftMigration = 0800;
+					};
+					535274CF210D1B09D8483A9596AA763E = {
+						LastSwiftMigration = 0800;
+					};
+					5F347A828DA155FF15F466AA943359F0 = {
+						LastSwiftMigration = 0800;
+					};
+					937B51FDD4AC435AD825A288E656B8C7 = {
+						LastSwiftMigration = 0800;
+					};
+				};
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 755F7A352AF131FB0B1243F2FF967E3C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5172ACAB7FEA22813859DC97CA0AA16F /* ChameleonFramework */,
+				4902307598D0017C523ED7DCA9970A40 /* MLPNeuralNet */,
+				3A8D732C59F1FC8C15EB96AF2B6C6331 /* PickerView */,
+				169B629602E3EFEECC747B2D6ECB9C45 /* PickerView-PickerView */,
+				937B51FDD4AC435AD825A288E656B8C7 /* Pods-SubNav */,
+				535274CF210D1B09D8483A9596AA763E /* Pods-SubNavTests */,
+				5F347A828DA155FF15F466AA943359F0 /* SwiftCSV */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3847CA6BDCB86FAFCF82F883492F13CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD526504DEF1AF0C762534DDD5E5E36C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81C33B3845D7F4DE1248BA383FA7D220 /* PickerView.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05AD25843A9300FCA4A8A1226F266EE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEE775A6A7F24B8EB1704D794A9D0DD8 /* Pods-SubNav-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BC7CBF8B0BA222C0C43290A2BEFEC16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B66AE85CF43CACA6BE193843A1A5BA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F55D813D97F869570C08D00A6F4AC7B /* MLPNeuralNet-dummy.m in Sources */,
+				E373E1CF3A86EEC54F0D18F842B7D605 /* MLPNeuralNet.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A007306A9F7EAF30B21BFDB4E741628B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B365A3A01EF135485F43412F83C7C65 /* Chameleon_.m in Sources */,
+				1236ECB96A915EC617957A42838CDD7B /* ChameleonConstants.m in Sources */,
+				E0C720836FBA4E75E3E57069219B7107 /* ChameleonFramework-dummy.m in Sources */,
+				A2AC9FD0F42F638C48E72F88E8BC4C80 /* ChameleonShorthand.swift in Sources */,
+				24E7D20FD204AF7AACB30A3B7C16388C /* NSArray+Chameleon.m in Sources */,
+				D2B61A78124FCB785E11A98BDD0471BC /* UIAppearance+Swift.m in Sources */,
+				A46A3EAB602FB4840C5AB8493F86AE4F /* UIButton+Chameleon.m in Sources */,
+				01C6F32401BCBE9FF9B3C095B031D92B /* UIColor+Chameleon.m in Sources */,
+				E0AFA39DA4A01D8A8FE3D4EC76250F46 /* UIColor+ChameleonPrivate.m in Sources */,
+				15E113F19F49C0C0472242BD6E849A1B /* UIImage+ChameleonPrivate.m in Sources */,
+				9B3EEA3CFA303B0D28A8034C16BFDA15 /* UILabel+Chameleon.m in Sources */,
+				4C6CEBA607BEA909A9CCB80C6AB6AE88 /* UINavigationController+Chameleon.m in Sources */,
+				C08DCA5180F1A15542694844C66B0EFB /* UIView+ChameleonPrivate.m in Sources */,
+				5177B3B95985D0A2CF8376A6FD4488C2 /* UIViewController+Chameleon.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D42E7B3C94AE5A10BDE4E6B4491A7D06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DC8FB298B3A32592DAAE0BF4B34D395 /* CSV.swift in Sources */,
+				5F349CB3AD7D7E6C9C7060A600857EEA /* Description.swift in Sources */,
+				6285AE0A5D0023BED1A839C9DDC93F70 /* Parser.swift in Sources */,
+				A7F47F96F8E0C3084A1EC2211F8A6FE6 /* ParserHelpers.swift in Sources */,
+				4852B5D133DBF9608FD710D777C03BBE /* String+Lines.swift in Sources */,
+				7CC200FFF8123EF84175D947DA065ACA /* SwiftCSV-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8750753787570B844A5E60E740E09F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EB1DDF7C82E58127FD3180B625F937A /* Pods-SubNavTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4B6A9CF6F371B611FD23648C3C20D2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCC3112D865A173F37A7CD7094E979AD /* PickerView-dummy.m in Sources */,
+				2F7A30B2274733A06A01B5F447606674 /* PickerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0716F01C58F53502AB9E0E01241D7304 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftCSV;
+			target = 5F347A828DA155FF15F466AA943359F0 /* SwiftCSV */;
+			targetProxy = 9F9A6F745F6D03F76FA78FF9C9B43569 /* PBXContainerItemProxy */;
+		};
+		63EAA0821FF0E8085B3295EE33EA2516 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MLPNeuralNet;
+			target = 4902307598D0017C523ED7DCA9970A40 /* MLPNeuralNet */;
+			targetProxy = F199DF062197709EE706FD11A06C3A24 /* PBXContainerItemProxy */;
+		};
+		688685BE8720A754A5F7EE99ADE9A7E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftCSV;
+			target = 5F347A828DA155FF15F466AA943359F0 /* SwiftCSV */;
+			targetProxy = 82C2887795EA1B3F2746BFAEEAF17E39 /* PBXContainerItemProxy */;
+		};
+		7F622F72FF4D3038C700EC7C8927D849 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PickerView;
+			target = 3A8D732C59F1FC8C15EB96AF2B6C6331 /* PickerView */;
+			targetProxy = E90E83AEE587AFDC0739B32B638AB84E /* PBXContainerItemProxy */;
+		};
+		8805C2E6D12024EFC46E5B22EA9467D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MLPNeuralNet;
+			target = 4902307598D0017C523ED7DCA9970A40 /* MLPNeuralNet */;
+			targetProxy = 15C71DDE6243E7A6DEDF06B6092B98EA /* PBXContainerItemProxy */;
+		};
+		8A241E30FBAA3D1E2C863E3D06C46D91 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ChameleonFramework;
+			target = 5172ACAB7FEA22813859DC97CA0AA16F /* ChameleonFramework */;
+			targetProxy = 912C9912BAB48B08A428743E65F72429 /* PBXContainerItemProxy */;
+		};
+		992A3FB2E89BF81658554CB5D89C80D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PickerView;
+			target = 3A8D732C59F1FC8C15EB96AF2B6C6331 /* PickerView */;
+			targetProxy = 38D1F710E742BCE5901BCDAE017D07F4 /* PBXContainerItemProxy */;
+		};
+		AADB18EDABAF9A771A84345E51C76021 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "PickerView-PickerView";
+			target = 169B629602E3EFEECC747B2D6ECB9C45 /* PickerView-PickerView */;
+			targetProxy = C69C612B293A4BC7169B2AA31BA7B80F /* PBXContainerItemProxy */;
+		};
+		FBEB1C1571C6EF5742E348562A39BAD1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ChameleonFramework;
+			target = 5172ACAB7FEA22813859DC97CA0AA16F /* ChameleonFramework */;
+			targetProxy = F898575EEC19653C70BA5EDDEEDDC667 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2EB064070E5C8B18C0E6A616EC57E125 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D4CA14C9CBA6068C4E8F865F5EE1D07 /* MLPNeuralNet.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MLPNeuralNet/MLPNeuralNet-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MLPNeuralNet/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MLPNeuralNet/MLPNeuralNet.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MLPNeuralNet;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3C4E046DC9E9154F65B9B423EFBEC9F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3162E0824476BCCCF26B62A7CA94BA65 /* PickerView.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/PickerView";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/PickerView/ResourceBundle-PickerView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = PickerView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		3FA451D268613890FA8A5A03801E11D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55B23AADC51506EE1351EF28BA3504DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64A9A5175A8DCA4545330680AA15D4C9 /* ChameleonFramework.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ChameleonFramework/ChameleonFramework-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ChameleonFramework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ChameleonFramework/ChameleonFramework.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ChameleonFramework;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		6F8544D85878F32D67BCE4142576D7AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3162E0824476BCCCF26B62A7CA94BA65 /* PickerView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PickerView/PickerView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PickerView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PickerView/PickerView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = PickerView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		861112B0DA6320FDCD98E6C38FEE4A33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76989EEAA74A41797DF9A67D423E378D /* Pods-SubNavTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SubNavTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SubNavTests/Pods-SubNavTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SubNavTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A97EDBD0C9D9FAC1B2975103FA953BB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3162E0824476BCCCF26B62A7CA94BA65 /* PickerView.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/PickerView";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/PickerView/ResourceBundle-PickerView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = PickerView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		AC0F797C6CFD6A2EE34C448622133782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64A9A5175A8DCA4545330680AA15D4C9 /* ChameleonFramework.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ChameleonFramework/ChameleonFramework-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ChameleonFramework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ChameleonFramework/ChameleonFramework.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ChameleonFramework;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C4EF68B23A256790BD9BB2AC99CE934E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C28D2FDAD3F8D2E15CB7D54045ED5006 /* SwiftCSV.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftCSV/SwiftCSV-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftCSV/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftCSV/SwiftCSV.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftCSV;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CD201DA84AA04F861FAD1F5CD99BDCD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CA82F9613CF2B6408242A1DF13A15E9 /* Pods-SubNavTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SubNavTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SubNavTests/Pods-SubNavTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SubNavTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E1A954518C5C2F36729F757075BF895C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3162E0824476BCCCF26B62A7CA94BA65 /* PickerView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PickerView/PickerView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PickerView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PickerView/PickerView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = PickerView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F4083547BF3ADEC7A925B63B8AB5547F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7132E27F562A7E893A483008DD7B972 /* Pods-SubNav.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SubNav/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SubNav/Pods-SubNav.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SubNav;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F8341F92C25CD06F4088A8C3B8A642BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D4CA14C9CBA6068C4E8F865F5EE1D07 /* MLPNeuralNet.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MLPNeuralNet/MLPNeuralNet-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MLPNeuralNet/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MLPNeuralNet/MLPNeuralNet.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = MLPNeuralNet;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F88E2FBDB8A9C15C6A775AB01B9D0FF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39DC3680A782386C70E0DDF180EB4BFC /* Pods-SubNav.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SubNav/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SubNav/Pods-SubNav.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SubNav;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FAD11EDC7CC76170A8AB5FF7F27C6CDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C28D2FDAD3F8D2E15CB7D54045ED5006 /* SwiftCSV.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftCSV/SwiftCSV-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftCSV/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftCSV/SwiftCSV.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftCSV;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		247E283304A1C6C4B43585F63B7228F9 /* Build configuration list for PBXNativeTarget "Pods-SubNavTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD201DA84AA04F861FAD1F5CD99BDCD0 /* Debug */,
+				861112B0DA6320FDCD98E6C38FEE4A33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */,
+				3FA451D268613890FA8A5A03801E11D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48E21BC30675BE10E5FB0192B03002EA /* Build configuration list for PBXNativeTarget "ChameleonFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC0F797C6CFD6A2EE34C448622133782 /* Debug */,
+				55B23AADC51506EE1351EF28BA3504DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A7B97BE51586F23591FE58D15A45508 /* Build configuration list for PBXNativeTarget "PickerView-PickerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C4E046DC9E9154F65B9B423EFBEC9F7 /* Debug */,
+				A97EDBD0C9D9FAC1B2975103FA953BB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B68CC7430F3DBA2B9F6D3609DAB600A /* Build configuration list for PBXNativeTarget "SwiftCSV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4EF68B23A256790BD9BB2AC99CE934E /* Debug */,
+				FAD11EDC7CC76170A8AB5FF7F27C6CDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE12AC79B3BF8646B6D590EB338486C8 /* Build configuration list for PBXNativeTarget "Pods-SubNav" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4083547BF3ADEC7A925B63B8AB5547F /* Debug */,
+				F88E2FBDB8A9C15C6A775AB01B9D0FF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE8F15D81508B398FC6828B6D2FD0383 /* Build configuration list for PBXNativeTarget "MLPNeuralNet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8341F92C25CD06F4088A8C3B8A642BF /* Debug */,
+				2EB064070E5C8B18C0E6A616EC57E125 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D51304277BC8DCEC1FC4EE184F28BA20 /* Build configuration list for PBXNativeTarget "PickerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1A954518C5C2F36729F757075BF895C /* Debug */,
+				6F8544D85878F32D67BCE4142576D7AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

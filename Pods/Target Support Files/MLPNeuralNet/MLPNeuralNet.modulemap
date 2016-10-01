@@ -1,0 +1,6 @@
+framework module MLPNeuralNet {
+  umbrella header "MLPNeuralNet-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,23 @@
+PODS:
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
+  - MLPNeuralNet (1.0.10)
+  - PickerView (0.2.2)
+  - SwiftCSV (0.3.2)
+
+DEPENDENCIES:
+  - ChameleonFramework/Swift
+  - MLPNeuralNet (~> 1.0.0)
+  - PickerView
+  - SwiftCSV
+
+SPEC CHECKSUMS:
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  MLPNeuralNet: a583b8088aa150aba416deb24adc31c9a8e6813d
+  PickerView: d6952d565ec80c9fcdbd7dff853723e4df0b2490
+  SwiftCSV: 8b64b738fc54567d229acb17ce6d584e0dd27560
+
+PODFILE CHECKSUM: cab71f4afa6c588b34ba761b9af7ac51e65b506c
+
+COCOAPODS: 1.0.1
